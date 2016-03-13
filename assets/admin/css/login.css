@@ -1,0 +1,93 @@
+@import url('css/reset.css');
+body {background-color: #DCDBDA;font-family: Arial,Verdan,Sans-Serif;font-size: 75%;min-width: 1000px; height: auto;}
+.error{font-weight: bold; color: red;}
+.login {
+background: white;
+-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+-moz-box-shadow: 0 1px 4px rgba(0,0,0,0.3), 0 0 40px rgba(0,0,0,0.1) inset;
+box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+margin: 100px auto 0;
+width: 450px;
+}
+.widget_header, .ui-dialog-titlebar {
+padding: 10px 20px 10px 20px; background: #333; margin-bottom: 5px;
+}
+.widget_contents, .dialog {
+background-color: #F8F8F8 ;
+padding: 15px;
+}
+.widget_footer{
+background: #4C4C4C;
+color: #C1C1C1;
+width: 100%;
+padding: 10px 0;
+text-align: center;
+font-size: 0.9em;}
+
+#login-content label {
+width: 114px;
+text-align: left;
+}
+form input[type="text"], form input[type="password"], form textarea, form select {
+color: #555;
+font-size: 14px;
+width: 300px;
+padding: 8px;
+margin: 5px 0;
+text-shadow: 0 1px 1px white;
+border-top: 1px solid #CCC;
+border-left: 1px solid #CCC;
+border-right: 1px solid #DDD;
+border-bottom: 1px solid #DDD;
+font-family: Arial, Helvetica, sans-serif;
+}
+#login-content input[type="text"], #login-content input[type="password"] {
+font-size: 14px;
+padding: 5px;
+width: 253px;
+}
+#login-content label {
+display: inline-block;
+width: 114px;
+text-align: left;
+}
+a[href], input[type="submit"], input[type="image"], label[for], select, button, .pointer {
+cursor: pointer;
+}
+form label {
+padding: 5px 10px 5px 0px;
+margin: 5px 0;
+color: #333;
+font-size: 12px;
+width: 80px;
+display: inline-block;
+font-weight: bold;
+}
+div.checker {
+width: 19px;
+height: 19px;
+vertical-align: text-bottom;
+}
+button, form input[type="submit"] {
+padding: 4px 14px;
+margin: 15px 0px 10px 93px;
+font-size: 14px;
+line-height: 20px;
+text-align: center;
+color: #333;
+text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+background-color: whiteSmoke;
+background-image: -moz-linear-gradient(top, white, #E6E6E6);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#E6E6E6));
+background-image: -webkit-linear-gradient(top, white, #E6E6E6);
+background-image: -o-linear-gradient(top, white, #E6E6E6);
+background-image: linear-gradient(to bottom, white, #E6E6E6);
+background-repeat: repeat-x;
+border: 1px solid #BBB;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 1px 2px rgba(0, 0, 0, .05);
+-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 1px 2px rgba(0, 0, 0, .05);
+}

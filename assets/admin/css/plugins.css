@@ -1,0 +1,6 @@
+.feature-list li {
+  background: #eee;
+  cursor: move;
+  padding: 15px 0px 0!important;
+  margin: 10px 0!important;
+}
