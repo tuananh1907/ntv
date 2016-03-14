@@ -25,6 +25,8 @@ class Project extends Parent_Controller
 
         $this->load->Model('category_default_model');
         $this->data['categories'] = $this->category_default_model->get_category($category_module,$language_id);
+//        _pr($this->data['categories'],true);
+
 
 
 
@@ -37,7 +39,7 @@ class Project extends Parent_Controller
         $this->data['posts'] = $this->post_default_model->get_post_by_pagination($post_module,$language_id,$offset,$limit);
         $this->data['current_page'] = $p;
         $this->data['pages'] = ceil($count/$limit);
-//        _pr($this->data['posts'],true);
+//        $this->data['pos'] = $this->data['posts'][0];
 
 
 
@@ -53,6 +55,7 @@ class Project extends Parent_Controller
 
         $this->load->Model('category_default_model');
         $this->data['categories'] = $this->category_default_model->get_category($category_module,$language_id);
+//        _pr($this->data['categories'],true);
 
         foreach($this->data['categories'] as $c) {
             if ($c['alias_name'] == $alias_name) {

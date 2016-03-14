@@ -56,8 +56,14 @@ $route['(:any)/news.html']           = "default/news/index/$1";
 $route['(:any)/news/(:any).html']    = "default/news/post/$1/$2";
 
 $route['(:any)/contact.html']        = "default/contact/index/$1";
-$route['(:any)/equipment.html']      = "default/equipment/index/$1";
+
+$route['(:any)/library.html']        = "default/library/index/$1";
+$route['(:any)/library/(:any).html'] = "default/library/post/$1/$2";
+$route['(:any)/video.html']          = "default/library/video/$1";
+$route['(:any)/pdf.html']            = "default/library/pdf/$1";
+
 $route['(:any)/career.html']         = "default/career/index/$1";
+
 $route['(:any)/partner.html']        = "default/partner/index/$1";
 
 $route['(:any)/products.html']       = "default/product/index/$1"; // trang san pham chi tiet

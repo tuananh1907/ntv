@@ -14,12 +14,12 @@ class Partner extends Parent_Controller {
     }
 
     public function index() {
-//        $post_module = 'about';
-//        $language_id = LANGUAGE;
-//        $meta = array();
-//        $this->load->model('post_default_model');
-//        $this->data['about_list'] = $this->post_default_model->get_posts($post_module,$language_id,$meta);
-//        $this->data['post'] = $this->data['about_list'][0];
+        $media_module = 'partner';
+        $language_id = LANGUAGE;
+        $meta = array();
+        $this->load->model('media_default_model');
+        $this->data['partner'] = $this->media_default_model->get_gallery($media_module,$language_id,$meta);
+//        _pr($this->data['partner'],true);
 
 
         //RUN VIEW

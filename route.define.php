@@ -10,7 +10,12 @@ $route_params = array(
 
       'contact' => '/%s/contact.html',
       'career' => '/%s/career.html',
-      'equipment' => '/%s/equipment.html',
+
+      'library' => '/%s/library.html',
+      'library-item' => '/%s/library/%s.html',
+      'video' => '/%s/video.html',
+      'pdf' => '/%s/pdf.html',
+
       'partner' => '/%s/partner.html',
       
       'product' => '/%s/products.html',
@@ -32,7 +37,12 @@ $route_params = array(
 
       'contact' => '/%s/contact.html',
       'career' => '/%s/career.html',
-      'equipment' => '/%s/equipment.html',
+
+      'library' => '/%s/library.html',
+      'library-item' => '/%s/library/%s.html',
+      'video' => '/%s/video.html',
+      'pdf' => '/%s/pdf.html',
+
       'partner' => '/%s/partner.html',
 
       'product' => '/%s/products.html',

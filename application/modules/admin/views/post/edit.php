@@ -58,6 +58,10 @@
                                             <label class="desc"><?php echo $this->lang->line('txt_content');?></label>
                                             <textarea id='<?php echo sprintf("post_%s_content", $l); ?>' data-editor='<?php echo sprintf("post_%s_content", $l); ?>' name="post[<?php echo $l?>][content]" class="textarea small full"><?php echo $posts[$l]['post_content'];?></textarea>  
                                         </div>
+
+                                        <?php
+                                        $pluggable->hook_action('admin_html_post_edit_block_left_' . $module, array($module, $l, $posts[$l]['post_id']));
+                                        ?>
                                         
                                         <!--SEO-->
                                         <div class="portlet ui-widget ui-widget-content ui-helper-clearfix ui-corner-all <?php echo (!in_array('seo', $module_option)) ? 'none':''; ?>">

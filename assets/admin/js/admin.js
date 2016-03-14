@@ -156,6 +156,8 @@ $(document).ready(function() {
 	            	$('.featured_photo').html(img);
 	            	$('#featured_photo').val(files[0]);
 	            }
+
+                save();
 	        }
 	    };
 	   	window.open('/assets/admin/js/kcfinder/browse.php?type=files&dir=files/public',
@@ -167,6 +169,7 @@ $(document).ready(function() {
 	$(document).on('click', '.gallery_list li .remove', function() {
 	    var li = $(this).parent();
 	    li.remove();
+        save();
 	});
 
 	function liHTML(fileName) {
@@ -201,12 +204,15 @@ $(document).ready(function() {
 		$('#gallery_' + lang).val( JSON.stringify(list) );
 	}
 
+    function save () {
+        $('.gallery_list').each(function() {
+            var el = $(this);
+            store(el)
+        });
+    }
 	$('.gallery_submit').click(function(e) {
 		e.preventDefault();
-		$('.gallery_list').each(function() {
-			var el = $(this);
-			store(el)
-		});
+        save();
 		$('form').submit();
 	});
 	

@@ -3,11 +3,10 @@
 class Pluggins {
 
 	public function __construct() {
-		include(APPPATH . "plugins/admin_index_page.php");
-		include(APPPATH . "plugins/admin_career.php");
-		include(APPPATH . "plugins/admin_news.php");
-		include(APPPATH . "plugins/admin_index_page_slogan.php");
-		
+		include(APPPATH . "plugins/admin_product.php");
+        /*include(APPPATH . "plugins/admin_product.php");
+        include(APPPATH . "plugins/admin_news.php");
+        include(APPPATH . "plugins/admin_index_page_slogan.php");*/
 	}
 
 }

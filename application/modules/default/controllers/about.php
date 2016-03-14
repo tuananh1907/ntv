@@ -10,7 +10,10 @@ class About extends Parent_Controller {
     function __construct() {
         //if i remove this parent::__construct(); the error is gone
         parent::__construct();
+
+        $this->get_page('about');
         $this->data = $this->get_data();
+
     }
 
     public function index() {
@@ -20,6 +23,11 @@ class About extends Parent_Controller {
         $this->load->model('post_default_model');
         $this->data['about_list'] = $this->post_default_model->get_posts($post_module,$language_id,$meta);
         $this->data['post'] = $this->data['about_list'][0];
+
+        //SEO
+        $this->data['seo_title'] = $this->data['post']['post_seo_title'];
+        $this->data['seo_description'] = $this->data['post']['post_seo_description'];
+        $this->data['seo_keywords'] = $this->data['post']['post_seo_keywords'];
 
 
         //RUN VIEW
@@ -38,6 +46,11 @@ class About extends Parent_Controller {
                 $this->data['post'] = $ab;
             }
         }
+
+        //SEO
+        $this->data['seo_title'] = $this->data['post']['post_seo_title'];
+        $this->data['seo_description'] = $this->data['post']['post_seo_description'];
+        $this->data['seo_keywords'] = $this->data['post']['post_seo_keywords'];
 
 
 //        _pr($this->data['about_list'], true);

@@ -1,18 +1,17 @@
 <?php
-//echo 'aa'; die();
 $count = count($menu_list);
-
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <title>Home</title>
+    <title><?php echo $seo_title; ?></title>
 
-    <link rel="stylesheet" type="text/css" href="<?php echo DEFAULT_CSS_PATH; ?>/reset.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo DEFAULT_CSS_PATH; ?>/reset.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo DEFAULT_CSS_PATH; ?>/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo DEFAULT_CSS_PATH; ?>/style.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo DEFAULT_CSS_PATH; ?>/jcarousel.responsive.css"/>
@@ -24,6 +23,7 @@ $count = count($menu_list);
     <script type="text/javascript" src="<?php echo DEFAULT_JS_PATH; ?>/jcarousel.responsive.js"></script>
     <script type="text/javascript" src="<?php echo DEFAULT_JS_PATH; ?>/custom.js"></script>
     <script type="text/javascript" src="<?php echo ADMIN_JS_PATH; ?>/jquery.validate.js"></script>
+    <script type="text/javascript" src='<?php echo DEFAULT_JS_PATH; ?>/bootstrap.youtubepopup.min.js'></script>
 </head>
 <body>
 <!--header-->
@@ -47,25 +47,17 @@ $count = count($menu_list);
                 <!--menu left-->
 
                 <ul>
-
-                    <?php for($i=0; $i <= 3; $i++) {?>
-
-                    <?php if($menu_list[$i]['post_module'] == 'index') { ?>
-
-                            <li class="first"><a href="<?php short_url('index')?>"><i class="fa fa-home fa-lg"></i></a></li>
-                        <?php }
-                        else {?>
-
-
-
-
-
-
-                    <li><a href="<?php short_url($menu_list[$i]['post_module'], array())?>"><?php echo $menu_list[$i]['post_title']?></a></li>
-                            <?php }?>
-
-
-                    <?php }?>
+                    <?php for ($i = 0; $i <= 3; $i++) { ?>
+                        <?php if ($menu_list[$i]['post_module'] == 'index') { ?>
+                            <li class="first"><a href="<?php short_url('index') ?>"><i class="fa fa-home fa-lg"></i></a>
+                            </li>
+                        <?php
+                        } else { ?>
+                            <li>
+                                <a href="<?php short_url($menu_list[$i]['post_module'], array()) ?>"><?php echo $menu_list[$i]['post_title'] ?></a>
+                            </li>
+                        <?php } ?>
+                    <?php } ?>
                 </ul>
 
             </div>
@@ -79,15 +71,14 @@ $count = count($menu_list);
                 <!--menu right-->
                 <ul>
                     <?php
-                    for($i = 4; $i < $count; $i++) {
-                    ?>
-                    <li><a href="<?php short_url($menu_list[$i]['post_module'])?>"><?php echo $menu_list[$i]['post_title']?></a></li>
-
-                    <?php }?>
+                    for ($i = 4; $i < $count; $i++) {
+                        ?>
+                        <li>
+                            <a href="<?php short_url($menu_list[$i]['post_module']) ?>"><?php echo $menu_list[$i]['post_title'] ?></a>
+                        </li>
+                    <?php } ?>
                 </ul>
             </div>
-
-
         </div>
     </div>
 </div>

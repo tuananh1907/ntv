@@ -3,17 +3,19 @@
 <div class='footer'>
 
     <div class="container contact">
-        <div class="col-lg-8 col-md-7 col-sm-6 col-xs-12 email -top">
-            <div class="col-lg-4 col-md-4 e-label visible-lg"><p>Đăng ký nhận thông tin</p></div>
-            <div class="col-lg-8 col-md-12  form">
-                <form action="#">
-                    <input type="text" placeholder='Email' />
-                    <button>Gửi Email</button>
-                </form>
+        <div class="col-lg-12">
+            <div class="col-lg-8 col-md-7 col-sm-6 col-xs-12 email -top">
+                <div class="col-lg-4 col-md-4 e-label visible-lg"><p>Đăng ký nhận thông tin</p></div>
+                <div class="col-lg-8 col-md-12  form">
+                    <form action="#">
+                        <input type="text" placeholder='Email' />
+                        <button>Gửi Email</button>
+                    </form>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-4 col-md-5 col-sm-6 hidden-xs download -top">
-            <p>Download catalogue</p>
+            <div class="col-lg-4 col-md-5 col-sm-6 hidden-xs download -top">
+                <p>Download catalogue</p>
+            </div>
         </div>
     </div>
 
@@ -31,8 +33,6 @@
                 <li class='yt'><a href="#"></a></li>
             </ul>
         </div>
-
-
 
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 info">
             <p><span>Trụ sở chính:</span> Lô 1, Đường 1A, KCN Tân Tạo , Khu Phố 2, Phường Tân Tạo A , Q. Bình Tân, TP. HCM</p>
@@ -55,17 +55,19 @@
     <div class='clearfix f-se'></div>
 
     <div class="container footer-bottom">
-        <div class="f-b-l pull-left">2016 Copyright by Nhat Truong Vinh</div>
-        <div class="f-b-r pull-right hidden-xs">
-            <ul class="f-b-r-m">
-                <li><a href="#">Sắt thép</a></li>
-                <li><a href="#">Gôm sứ</a></li>
-                <li><a href="#">Giới thiệu</a></li>
-                <li><a href="#">Hỗ trợ</a></li>
-                <li><a href="#">Liên hệ</a></li>
-            </ul>
+        <div class="col-lg-12">
+            <div class="f-b-l pull-left">2016 Copyright by Nhat Truong Vinh</div>
+            <div class="f-b-r pull-right  hidden-xs">
+                <ul class="f-b-r-m">
+                    <li><a href="#">Sắt thép</a></li>
+                    <li><a href="#">Gôm sứ</a></li>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Hỗ trợ</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="top"></div>
         </div>
-        <div class="top"></div>
     </div>
 
 </div>

@@ -9,11 +9,12 @@ class News extends Parent_Controller {
 	 function __construct() {
         //if i remove this parent::__construct(); the error is gone
         parent::__construct();
-       $this->data = $this->get_data();
-//        $this->data['breadcrumbs'] = $this->update_breadcrumbs('news');
-//        $this->load->helper('thumb');
+        $this->data = $this->get_data();
+
+         /*$this->data['breadcrumbs'] = $this->update_breadcrumbs('news');
+         $this->load->helper('thumb');*/
 	}
-	
+
 	public function index() {
         $this->load->Model("post_default_model");
 
@@ -37,7 +38,7 @@ class News extends Parent_Controller {
 //        _pr($this->data['timestamp'],true);
 
 
-		
+
 //		$page = $this->post_default_model->get_page('news', LANGUAGE);
 //		$this->data['page'] = $page;
 //
@@ -45,7 +46,7 @@ class News extends Parent_Controller {
 //		$this->data['seo_title'] = $page['post_seo_title'];
 //		$this->data['seo_description'] = $page['post_seo_description'];
 //		$this->data['seo_keywords'] = $page['post_seo_keywords'];
-		
+
 	    //RUN VIEW
         $this->template->build( 'news/index', $this->data );
                 //CACHING
@@ -80,5 +81,5 @@ class News extends Parent_Controller {
         //RUN VIEW
         $this->template->build( 'news/post', $this->data );
     }
-	
+
 }

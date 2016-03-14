@@ -52,6 +52,10 @@
                                             <label class="desc"><?php echo $this->lang->line('txt_content');?></label>
                                             <textarea id='<?php echo sprintf("post_%s_content", $l); ?>' data-editor='<?php echo sprintf("post_%s_content", $l); ?>' name="post[<?php echo $l?>][content]" class="textarea small full"></textarea>  
                                         </div>
+
+                                        <?php
+                                        $pluggable->hook_action('admin_html_post_add_block_left_' . $module, array($module, $l));
+                                        ?>
                                         
                                         <!--SEO-->
                                         <div class="portlet ui-widget ui-widget-content ui-helper-clearfix ui-corner-all <?php echo (!in_array('seo', $module_option)) ? 'none':''; ?>">
