@@ -31,9 +31,12 @@ class Parent_Controller extends Core_Controller
         $this->load->Model("post_default_model");
         $page = $this->post_default_model->get_page($module, LANGUAGE);
         $this->data['page'] = $page;
-        $this->data['seo_title'] = $page['post_seo_title'];
-        $this->data['seo_description'] = $page['post_seo_description'];
-        $this->data['seo_keywords'] = $page['post_seo_keywords'];
+        if ( !empty($page) ) {
+            $this->data['seo_title'] = $page['post_seo_title'];
+            $this->data['seo_description'] = $page['post_seo_description'];
+            $this->data['seo_keywords'] = $page['post_seo_keywords'];
+        }
+
     }
 
     private function get_menu()

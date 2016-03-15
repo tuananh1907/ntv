@@ -9,3 +9,5 @@ $lang['txt_add_more'] = 'Thêm';
 $lang['txt_datetime'] = 'Ngày tháng';
 
 $lang['txt_slogan'] = 'Chính sách';
+$lang['txt_upload_file'] = 'Tải tài liệu';
+$lang['txt_document'] = 'Tìm';

@@ -1,5 +1,13 @@
+<?php
+$r = ceil( count($shape) /2 );
+?>
 <div class="slide">
-    <img class='img-responsive' src="images/img2.jpg">
+    <?php
+
+    if (!empty($page['post_featured_image'])) {
+        ?>
+        <img class='img-responsive' src="<?php echo $page['post_featured_image'];?>">
+    <?php } ?>
 </div>
 
 <div class="clearfix"></div>
@@ -7,7 +15,7 @@
 <div class="content">
     <div class="container">
         <div class="ntv-pagination">
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"><p>Sắt thép</p></div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"><p><?php echo $page['post_title']?></p></div>
             <div class="col-lg-5 col-md-5 visible-md visible-lg p-l-c">
                 <div class="l">
                     <div class="col-lg-1 col-md-1 col-sm-1 line star"></div>
@@ -18,7 +26,7 @@
             <div class="col-lg-4 col-md-4 col-sm-6 hidden-xs bc">
                 <ul>
                     <li><a href="#">Trang chủ - </a></li>
-                    <li><a href="#">Sản phẩm - </a></li>
+                    <li><a href="#"><?php echo $page['post_title']?> - </a></li>
                     <li class='last'><span>Sắt thép</span></li>
                 </ul>
             </div>
@@ -31,26 +39,30 @@
                 <div class='heading list'><p>Danh m?c thép</p> <span class='se'></span></div>
                 <ul class='menu-list'>
                     <?php foreach ($categories as $cs) { ?>
-                        <li><a href="#"><?php echo $cs['category_title'] ?></a></li>
+                        <li><a href="<?php short_url('productcat-item', array($cs['alias_name']))?>"><?php echo $cs['category_title'] ?></a></li>
                     <?php } ?>
 
                 </ul>
             </div>
 
             <div class="block-left">
-                <div class='heading'><p>Theo hình d?ng</p> <span class='se'></span></div>
+                <div class='heading'><p>Theo hình dạng</p> <span class='se'></span></div>
                 <div class="col-lg-6 tag-area">
                     <ul class='tag'>
-                        <li><label></label><a href="#">Thép ?ng</a></li>
-                        <li><label></label><a href="#">?ng ch? nh?t</a></li>
-                        <li><label></label><a href="#">Thép ?ng</a></li>
+                        <?php
+                        for($i=0; $i< $r; $i++) {
+                            ?>
+                            <li><label></label><a href="<?php echo $shape[$i]['tag_id']?>"><?php echo $shape[$i]['title']?></a></li>
+                        <?php }?>
                     </ul>
                 </div>
                 <div class="col-lg-6 tag-area">
                     <ul class='tag'>
-                        <li><label></label><a href="#">Thép ?ng</a></li>
-                        <li class='active'><label></label><a href="#">Thép ?ng</a></li>
-                        <li><label></label><a href="#">Thép ?ng</a></li>
+                        <?php
+                        for($i=$r; $i< count($shape); $i++) {
+                            ?>
+                            <li><label></label><a href="<?php echo $shape[$i]['tag_id']?>"><?php echo $shape[$i]['title']?></a></li>
+                        <?php }?>
                     </ul>
                 </div>
             </div>
@@ -61,9 +73,11 @@
                 <div class='heading'><p>Theo nhãn hi?u</p> <span class='se'></span></div>
                 <div class="col-lg-12 tag-area">
                     <ul class='tag'>
-                        <li><label></label><a href="#">Thép ?ng</a></li>
-                        <li><label></label><a href="#">Thép ?ng</a></li>
-                        <li><label></label><a href="#">Thép ?ng</a></li>
+                        <?php
+                        foreach($brand as $b) {
+                            ?>
+                            <li><label></label><a href="<?php echo $b['tag_id']?>"><?php echo $b['title']?></a></li>
+                        <?php }?>
                     </ul>
                 </div>
             </div>
@@ -74,11 +88,12 @@
 
             <div class="content-right-center detail">
                 <div class="col-lg-6 gallery">
-                    <div class="col-lg-12"><img class='img-responsive' src="images/d-i-1.jpg"></div>
-                    <div class="col-lg-3"><img class='img-responsive' src="images/d-i-t-1.jpg"></div>
-                    <div class="col-lg-3"><img class='img-responsive' src="images/d-i-t-2.jpg"></div>
-                    <div class="col-lg-3"><img class='img-responsive' src="images/d-i-t-3.jpg"></div>
-                    <div class="col-lg-3"><img class='img-responsive' src="images/d-i-t-4.jpg"></div>
+                    <div class="col-lg-12"><img class='img-responsive' src="<?php echo $gallery[0]['img']?>"></div>
+                    <?php
+                    if ( !empty($gallery) ) {
+                    foreach($gallery as $g) {?>
+                    <div class="col-lg-3"><img class='img-responsive' src="<?php echo $g['img']?>"></div>
+                    <?php } }?>
                 </div>
                 <div class="col-lg-6 no-padding-right">
                     <p class='detail-title'><?php echo $post['post_title'] ?></p>
@@ -122,57 +137,30 @@
             <div class="col-lg-12">
                 <div class="jcarousel jcarousel-3">
                     <ul>
-                        <!--item-->
-                        <li>
-                            <div class='p-item-img'>
-                                <a href="#"><img class='img-responsive' src="<?php echo DEFAULT_IMAGE_PATH; ?>/p-d-n.jpg" alt="" /></a>
 
-                                <div class='bg'>
-                                    <div class='bg-center'></div>
-                                </div>
-                            </div>
-                            <p><a href="#">Dự án Đại Lộ Đông Tây - TP.HCM</a></p>
-                        </li>
-                        <!--//item-->
+                        <?php
+                        foreach($posts_category as $pc) {?>
 
                         <!--item-->
                         <li>
                             <div class='p-item-img'>
-                                <a href="#"><img class='img-responsive' src="<?php echo DEFAULT_IMAGE_PATH; ?>/p-d-n.jpg" alt="" /></a>
+                             <img class='img-responsive' src="<?php echo $pc['post_featured_image']?>" alt="" />
 
-                                <div class='bg'>
+                                <a href="<?php short_url('product-item',array($pc['alias_name']))?>"><div class='bg'>
                                     <div class='bg-center'></div>
                                 </div>
+                                </a>
                             </div>
-                            <p><a href="#">Dự án Đại Lộ Đông Tây - TP.HCM</a></p>
+                            <p><a href="<?php short_url('product-item',array($pc['alias_name']))?>"><?php echo $pc['post_title']?></a></p>
                         </li>
                         <!--//item-->
+                        <?php }?>
 
-                        <!--item-->
-                        <li>
-                            <div class='p-item-img'>
-                                <a href="#"><img class='img-responsive' src="<?php echo DEFAULT_IMAGE_PATH; ?>/p-d-n.jpg" alt="" /></a>
 
-                                <div class='bg'>
-                                    <div class='bg-center'></div>
-                                </div>
-                            </div>
-                            <p><a href="#">Dự án Đại Lộ Đông Tây - TP.HCM</a></p>
-                        </li>
-                        <!--//item-->
 
-                        <!--item-->
-                        <li>
-                            <div class='p-item-img'>
-                                <a href="#"><img class='img-responsive' src="<?php echo DEFAULT_IMAGE_PATH; ?>/p-d-n.jpg" alt="" /></a>
 
-                                <div class='bg'>
-                                    <div class='bg-center'></div>
-                                </div>
-                            </div>
-                            <p><a href="#">Dự án Đại Lộ Đông Tây - TP.HCM</a></p>
-                        </li>
-                        <!--//item-->
+
+
                     </ul>
                 </div>
                 <div class="clearfix"></div>

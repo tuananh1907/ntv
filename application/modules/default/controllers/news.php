@@ -9,6 +9,7 @@ class News extends Parent_Controller {
 	 function __construct() {
         //if i remove this parent::__construct(); the error is gone
         parent::__construct();
+         $this->get_page('news');
         $this->data = $this->get_data();
 
          /*$this->data['breadcrumbs'] = $this->update_breadcrumbs('news');
@@ -70,6 +71,11 @@ class News extends Parent_Controller {
         $this->data['new_posts'] = $this->post_default_model->get_posts($post_module, $language_id, $meta);
 
 //        _pr($this->data['new_posts'],true);
+
+        //SEO
+        $this->data['seo_title'] = $this->data['posts']['post_seo_title'];
+        $this->data['seo_description'] = $this->data['posts']['post_seo_description'];
+        $this->data['seo_keywords'] = $this->data['posts']['post_seo_keywords'];
 
 
 

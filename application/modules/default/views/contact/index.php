@@ -1,5 +1,10 @@
 <div class="slide">
-    <img class='img-responsive' src="images/img2.jpg">
+    <?php
+
+    if (!empty($page['post_featured_image'])) {
+        ?>
+        <img class='img-responsive' src="<?php echo $page['post_featured_image'];?>">
+    <?php } ?>
 </div>
 
 <div class="clearfix"></div>
@@ -7,7 +12,7 @@
 <div class="content">
     <div class="container">
         <div class="ntv-pagination">
-            <div class="col-lg-3"><p>Sắt thép</p></div>
+            <div class="col-lg-3"><p><?php echo $page['post_title']?></p></div>
             <div class="col-lg-5 p-l-c">
                 <div class="l">
                     <div class="col-lg-1 line star"></div>
@@ -18,8 +23,8 @@
             <div class="col-lg-4 bc">
                 <ul>
                     <li><a href="#">Trang chủ - </a></li>
-                    <li><a href="#">Sản phẩm - </a></li>
-                    <li class='last'><span>Sắt thép</span></li>
+<!--                    <li><a href="#">--><?php //echo $page['post_title']?><!-- - </a></li>-->
+                    <li class='last'><span><?php echo $page['post_title']?></span></li>
                 </ul>
             </div>
         </div>

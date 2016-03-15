@@ -31,8 +31,8 @@ $count = count($menu_list);
     <div class="container">
         <div class="block-top language col-lg-5 col-md-5 pull-left">
             <span class='hidden-xs'>Ngôn ngữ :</span>
-            <a href="#" id="eng"><img src="<?php echo DEFAULT_IMAGE_PATH; ?>/eng.png"/></a>
-            <a href="#" id="viet"><img src="<?php echo DEFAULT_IMAGE_PATH; ?>/viet.png"/></a>
+            <a href="?l=en" id="eng"><img src="<?php echo DEFAULT_IMAGE_PATH; ?>/eng.png"/></a>
+            <a href="?l=vn" id="viet"><img src="<?php echo DEFAULT_IMAGE_PATH; ?>/viet.png"/></a>
         </div>
         <div class="block-top hotline col-lg-5 col-md-5 pull-right">
             <div class='pull-right'>

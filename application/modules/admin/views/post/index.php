@@ -35,11 +35,12 @@
                         ?>
                     </div>
                     <div class="block-right control block-right-control-button">
-                        <?php 
+                        <?php
+                            $c = (!in_array('highlight', $module_option)) ? 'none':'';
                             my_select(
                                 array( array('title' =>  $this->lang->line('txt_yes'), 'value'=> 1), array('title' =>  $this->lang->line('txt_no'), 'value' => 0) ), 
                                 $keywords = array('title' => 'title', 'value' => 'value'),
-                                $attributes = array('name' => 'highlight', 'id' => 'ddlhighlight' , 'class' => 'combobox ddlFilter', 'data-filter' => url_add_params($params, '/index.php/admin/post')),
+                                $attributes = array('name' => 'highlight', 'id' => 'ddlhighlight' , 'class' => 'combobox ddlFilter ' . $c, 'data-filter' => url_add_params($params, '/index.php/admin/post')),
                                 $selected = array($params['highlight']),
                                 $no_choice = array('title' => $this->lang->line('txt_highlight'), 'value' => -1) 
                             );

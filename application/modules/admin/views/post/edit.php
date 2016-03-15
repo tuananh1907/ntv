@@ -141,7 +141,7 @@
                                     ?>
                                 </div>
                             </li>
-                            <li>
+                            <li class="<?php echo (!in_array('highlight', $module_option)) ? 'none':''; ?>">
                                 <label class="desc">
                                     <?php echo $this->lang->line('txt_highlight');?>
                                 </label>

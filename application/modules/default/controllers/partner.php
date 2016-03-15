@@ -10,6 +10,7 @@ class Partner extends Parent_Controller {
     function __construct() {
         //if i remove this parent::__construct(); the error is gone
         parent::__construct();
+        $this->get_page('partner');
         $this->data = $this->get_data();
     }
 

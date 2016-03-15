@@ -70,7 +70,7 @@ class Core_Controller extends MX_Controller {
                 if( count($alias) > 0 ) {
                         $module = $alias['alias_module'];
                         $alias_name = $alias['alias_name'];
-                        $url = short_url($module, array($alias_name), true );
+                        $url = short_url($module . '-item', array($alias_name), true );
                         $url = substr($url, 1, strlen($url));
                         $url = base_url() . $url;
                         redirect( $url );

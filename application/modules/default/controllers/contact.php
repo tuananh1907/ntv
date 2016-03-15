@@ -9,6 +9,7 @@ class Contact extends Parent_Controller {
 	 function __construct() {
         //if i remove this parent::__construct(); the error is gone
         parent::__construct();
+         $this->get_page('contact');
         $this->data = $this->get_data();
 //        $this->data['breadcrumbs'] = $this->update_breadcrumbs('contact');
 	}
@@ -38,6 +39,8 @@ class Contact extends Parent_Controller {
 
 		$page = $this->post_default_model->get_page('contact', LANGUAGE);
 		$this->data['page'] = $page;
+
+//        _pr($this->data['page'],true);
 
 		//SEO
 		/*$this->data['seo_title'] = $page['post_seo_title'];

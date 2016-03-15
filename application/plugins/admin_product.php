@@ -8,6 +8,14 @@ $pluggable->register_action('admin_callback_after_post_added_product', 'admin_ca
 $pluggable->register_action('admin_html_post_edit_block_left_product', 'admin_html_post_edit_block_left_product_func');
 $pluggable->register_action('admin_callback_after_post_updated_product', 'admin_callback_after_post_updated_product_func');
 
+//ADD
+$pluggable->register_action('admin_html_post_add_block_left_product2', 'admin_html_post_add_block_left_product_func');
+$pluggable->register_action('admin_callback_after_post_added_product2', 'admin_callback_after_post_added_product_func');
+
+//EDIT
+$pluggable->register_action('admin_html_post_edit_block_left_product2', 'admin_html_post_edit_block_left_product_func');
+$pluggable->register_action('admin_callback_after_post_updated_product2', 'admin_callback_after_post_updated_product_func');
+
 function admin_html_post_add_block_left_product_func($module, $language) {
     $CI =& get_instance();
     $CI->lang->load('plugins', ADMIN_LANGUAGE);
@@ -17,10 +25,9 @@ function admin_html_post_add_block_left_product_func($module, $language) {
             <span class="ui-icon ui-icon-circle-arrow-s"></span>Gallery
         </div>
         <div class="portlet-content">
-            <label class="desc">Thêm ảnh</label>
             <a rel="<?php echo $language?>" class='button upload-gallery'>Thêm ảnh</a>
             <div class="clearfix"></div>
-            <ul lang="<?php echo $language?>" class='gallery_list' id='gallery_<?php echo $language?>_list'>
+            <ul lang="<?php echo $language?>" class='gallery_list gallery_plugin_list' id='gallery_<?php echo $language?>_list'>
             </ul>
             <input type="hidden" id="gallery_<?php echo $language?>" name="gallery_<?php echo $language?>">
         </div>
@@ -70,11 +77,11 @@ function admin_html_post_edit_block_left_product_func($module = '', $language = 
             <span class="ui-icon ui-icon-circle-arrow-s"></span>Gallery
         </div>
         <div class="portlet-content">
-            <label class="desc">Thêm ảnh</label>
             <a rel="<?php echo $language?>" class='button upload-gallery'>Thêm ảnh</a>
             <div class="clearfix"></div>
-            <ul lang="<?php echo $language?>" class='gallery_list' id='gallery_<?php echo $language?>_list'>
+            <ul lang="<?php echo $language?>" class='gallery_list gallery_plugin_list' id='gallery_<?php echo $language?>_list'>
                 <?php
+                if( count($g) > 0 ) {
                 foreach ($g as $v) {
                 ?>
                     <li>
@@ -87,6 +94,7 @@ function admin_html_post_edit_block_left_product_func($module = '', $language = 
                         <a href="#" class='remove'>X</a>
                     </li>
                 <?php
+                }
                 }
                 ?>
             </ul>

@@ -42,8 +42,8 @@ class Module extends Base_Install_Controller {
         $orders = array('module_order' => 'asc');
 
         $page = (int)$this->params['page'];
-        $from = ($page - 1) * 20;
-        $to = 20;
+        $from = ($page - 1) * 120;
+        $to = 120;
         
     	//DATA TO VIEW
     	$data['params'] = $this->params;

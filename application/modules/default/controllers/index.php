@@ -10,6 +10,7 @@ class Index extends Parent_Controller {
 	 function __construct() {
         //if i remove this parent::__construct(); the error is gone
         parent::__construct();
+         $this->get_page('index');
         $this->data = $this->get_data();
 	}
 	
@@ -20,6 +21,7 @@ class Index extends Parent_Controller {
 
         $this->load->model('post_default_model');
         $this->data['post_index'] = $this->post_default_model->get_posts($post_module,$language_id,$meta);
+//        _pr($this->data['post_index'],true);
 
 
 

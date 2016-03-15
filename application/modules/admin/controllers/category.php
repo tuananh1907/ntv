@@ -304,7 +304,7 @@ class Category extends Base_Admin_Controller {
         $category = $this->category_admin_model->get_by_id($id);
         $langmap_id = $category->langmap_id;
         
-        $categories = $this->category_admin_model->get_by_langmap_id($langmap_id);
+        //$categories = $this->category_admin_model->get_by_langmap_id($langmap_id);
         
         //DELETE DATA
         $this->category_admin_model->delete_by_langmap_id( $langmap_id );

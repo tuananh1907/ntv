@@ -1,6 +1,7 @@
 
 <div class="slide">
     <?php
+
     if( !empty($page['post_featured_image']) ) {
     ?>
     <img class='img-responsive' src="<?php echo $page['post_featured_image']; ?>">
@@ -25,8 +26,8 @@
             <div class="col-lg-4 col-md-4 col-sm-6 hidden-xs bc">
                 <ul>
                     <li><a href="#">Trang chủ - </a></li>
-                    <li><a href="#"><?php echo $page['post_title']?> - </a></li>
-                    <li class='last'><span>Sắt thép</span></li>
+<!--                    <li><a href="#">--><?php //echo $page['post_title']?><!-- - </a></li>-->
+                    <li class='last'><span><?php echo $page['post_title']?></span></li>
                 </ul>
             </div>
         </div>

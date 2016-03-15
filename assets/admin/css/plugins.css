@@ -4,3 +4,13 @@
   padding: 15px 0px 0!important;
   margin: 10px 0!important;
 }
+
+
+.gallery_plugin_list {
+    margin-top: 10px;
+}
+
+
+.gallery_plugin_list li{
+    margin: 5px 0!important;
+}

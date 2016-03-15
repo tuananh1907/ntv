@@ -3,14 +3,18 @@
         <div id="main-wrapper">
             <div id="main-header">
                 <div class="block-left">
-                    <img src="<?php echo ADMIN_IMAGE_PATH ?>/icons/icon_list.png" alt="" />
+                    <img src="<?php echo ADMIN_IMAGE_PATH ?>/icons/icon_list.png" alt=""/>
+
                     <h1 class='title'>
-                        <?php echo $this->lang->line('txt_post');?> :: <?php echo $this->lang->line('txt_add');?>
+                        <?php echo $this->lang->line('txt_post'); ?> :: <?php echo $this->lang->line('txt_add'); ?>
                     </h1>
                 </div>
                 <div class="block-right">
-                    <button type="submit" name="add" id="cmdAdd" class="button "><?php echo $this->lang->line('txt_add');?></button>
-                    <button type="submit" data-href='<?php echo url_add_params($params, '/index.php/admin/post')?>' name="cancel"  id="cmdCancel" class="button "><?php echo $this->lang->line('txt_cancel');?></button>
+                    <button type="submit" name="add" id="cmdAdd"
+                            class="button "><?php echo $this->lang->line('txt_add'); ?></button>
+                    <button type="submit" data-href='<?php echo url_add_params($params, '/index.php/admin/tag') ?>'
+                            name="cancel" id="cmdCancel"
+                            class="button "><?php echo $this->lang->line('txt_cancel'); ?></button>
                 </div>
             </div>
             <div id="main-content">
@@ -19,46 +23,51 @@
                         <div class="content">
                             <div id="tabs" class="tabs">
                                 <ul class='tabs-heading'>
-                                    <?php foreach($languages as $l) { ?>
+                                    <?php foreach ($languages as $l) { ?>
                                         <li>
-                                            <a href="#tabs-<?php echo $l?>"><img src="<?php echo FLAGS_PATH ?>/<?php echo $l . '.png'; ?>" /></a>
+                                            <a href="#tabs-<?php echo $l ?>"><img
+                                                    src="<?php echo FLAGS_PATH ?>/<?php echo $l . '.png'; ?>"/></a>
                                         </li>
                                     <?php } ?>
-                                </ul><!--//TABS-HEADING-->
-                                <?php foreach($languages as $l) {
+                                </ul>
+                                <!--//TABS-HEADING-->
+                                <?php foreach ($languages as $l) {
                                     //$l = $l;
                                     ?>
-                                    <div id="tabs-<?php echo $l?>">
+                                    <div id="tabs-<?php echo $l ?>">
                                         <div class="form">
                                             <div class="block-left">
 
                                                 <div class='form-field'>
-                                                    <label class="desc"><?php echo $this->lang->line('txt_title');?></label>
-                                                    <input name="tag[<?php echo $l?>][title]" type="text" value="" class="field text full">
+                                                    <label
+                                                        class="desc"><?php echo $this->lang->line('txt_title'); ?></label>
+                                                    <input name="tag[<?php echo $l ?>][title]" type="text" value=""
+                                                           class="field text full">
                                                 </div>
 
 
-
-
-
-
-
-                                            </div><!--//Block left-->
+                                            </div>
+                                            <!--//Block left-->
 
                                             <div class="block-right">
 
-                                            </div><!--//Block right-->
+                                            </div>
+                                            <!--//Block right-->
                                             <div class="clearfix"></div>
-                                        </div><!--//form-->
+                                        </div>
+                                        <!--//form-->
 
                                         <div class="form-control">
-                                            <button type="submit" name="add" id="cmdAdd" class="button "><?php echo $this->lang->line('txt_add');?></button>
-                                            <button type="submit" name="cancel"  id="cmdCancel" class="button "><?php echo $this->lang->line('txt_cancel');?></button>
+                                            <button type="submit" name="add" id="cmdAdd"
+                                                    class="button "><?php echo $this->lang->line('txt_add'); ?></button>
+                                            <button type="submit" name="cancel" id="cmdCancel"
+                                                    class="button " data-href='<?php echo url_add_params($params, '/index.php/admin/tag') ?>'><?php echo $this->lang->line('txt_cancel'); ?></button>
                                         </div>
 
                                     </div><!--//TABS-CONTENT-->
                                 <?php } ?>
-                            </div><!--//TABS-->
+                            </div>
+                            <!--//TABS-->
 
                         </div>
                     </div>
@@ -68,14 +77,16 @@
 
                     <div class="portlet ui-widget ui-widget-content ui-helper-clearfix ui-corner-all">
                         <div class="portlet-header ui-widget-header">
-                            <span class="ui-icon ui-icon-circle-arrow-s"></span><?php echo $this->lang->line('txt_configuration');?>
+                            <span
+                                class="ui-icon ui-icon-circle-arrow-s"></span><?php echo $this->lang->line('txt_configuration'); ?>
                         </div>
                         <div class="portlet-content">
                             <ul>
                                 <li>
                                     <label class="desc">
-                                        <?php echo $this->lang->line('txt_status');?>
+                                        <?php echo $this->lang->line('txt_status'); ?>
                                     </label>
+
                                     <div>
                                         <?php
                                         my_select(
@@ -91,8 +102,8 @@
                     </div>
 
 
-
-                </div><!--//SIDEBAR-->
+                </div>
+                <!--//SIDEBAR-->
 
                 <div class="clearfix"></div>
 

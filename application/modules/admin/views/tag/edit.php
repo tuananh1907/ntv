@@ -10,7 +10,7 @@
                 </div>
                 <div class="block-right">
                     <button type="submit" name="update" id="cmdAdd" class="button "><?php echo $this->lang->line('txt_add');?></button>
-                    <button type="submit" data-href='<?php echo url_add_params($params, '/index.php/admin/post')?>' name="cancel"  id="cmdCancel" class="button "><?php echo $this->lang->line('txt_cancel');?></button>
+                    <button type="submit" data-href='<?php echo url_add_params($params, '/index.php/admin/tag')?>' name="cancel"  id="cmdCancel" class="button "><?php echo $this->lang->line('txt_cancel');?></button>
                 </div>
             </div>
             <div id="main-content">
@@ -58,7 +58,7 @@
 
                                         <div class="form-control">
                                             <button type="submit" name="update" id="cmdAdd" class="button "><?php echo $this->lang->line('txt_add');?></button>
-                                            <button type="submit" name="cancel"  id="cmdCancel" class="button "><?php echo $this->lang->line('txt_cancel');?></button>
+                                            <button type="submit" name="cancel"  id="cmdCancel" class="button " data-href='<?php echo url_add_params($params, '/index.php/admin/tag') ?>'><?php echo $this->lang->line('txt_cancel');?></button>
                                         </div>
 
                                     </div><!--//TABS-CONTENT-->

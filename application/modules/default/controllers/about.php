@@ -24,6 +24,8 @@ class About extends Parent_Controller {
         $this->data['about_list'] = $this->post_default_model->get_posts($post_module,$language_id,$meta);
         $this->data['post'] = $this->data['about_list'][0];
 
+
+
         //SEO
         $this->data['seo_title'] = $this->data['post']['post_seo_title'];
         $this->data['seo_description'] = $this->data['post']['post_seo_description'];
@@ -46,6 +48,8 @@ class About extends Parent_Controller {
                 $this->data['post'] = $ab;
             }
         }
+
+//        _pr($this->data['post'],true);
 
         //SEO
         $this->data['seo_title'] = $this->data['post']['post_seo_title'];

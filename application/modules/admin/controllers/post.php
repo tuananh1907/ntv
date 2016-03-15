@@ -282,7 +282,32 @@ class Post extends Base_Admin_Controller {
         $result = $this->post_admin_model->update_by_langmap_id( $args, $langmap_id );
         
         //RESPONSE
-        echo json_encode( array('STATUS' => $result) );
+        echo json_encode( array('STATUS' => $result) ); die();
+    }
+
+
+    /**
+     * UPDATE STATUS
+     *
+     */
+    public function highlight() {
+        //PERMISSION
+        $this->page_has_permission($this->module_code(), EDIT);
+
+        //GET DATA
+        $status = (int)$this->input->get('status');
+        $id = (int)$this->input->get('id');
+
+        //GET LANGMAP ID
+        $post = $this->post_admin_model->get_by_id($id);
+        $langmap_id = $post->langmap_id;
+
+        //UPDATE DATA
+        $args = array('post_highlight' => $status);
+        $result = $this->post_admin_model->update_by_langmap_id( $args, $langmap_id );
+
+        //RESPONSE
+        echo json_encode( array('STATUS' => $result) ); die();
     }
     
     
