@@ -66,4 +66,12 @@ class Tag_Admin_Model extends Tag_Model {
         return $this->db->delete( $this->get_table() );
     }
 
+
+    public function get_tag($tag_module, $language_id) {
+        $this->db->from($this->get_table());
+        $this->db->where(array('module' => $tag_module, 'language_id' => $language_id));
+        $query = $this->db->get();
+        return  $query->result_array();
+    }
+
 }

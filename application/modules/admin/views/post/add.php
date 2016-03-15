@@ -96,6 +96,10 @@
                                                 );
                                             ?>
                                         </div>
+
+                                        <?php
+                                        $pluggable->hook_action('admin_html_post_add_block_right_' . $module, array($module, $l));
+                                        ?>
                                     </div><!--//Block right-->
                                     <div class="clearfix"></div>
                                 </div><!--//form-->
