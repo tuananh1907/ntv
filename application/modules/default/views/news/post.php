@@ -32,46 +32,50 @@
 
     <div class="container">
 
-        <div class="row">
+        <div class="news">
 
             <div class="row tab">
                 <div class="col-lg-6 tab-label-header">
                     <div class="tab-label tab-label-left active">
                         <a href="#"><?php echo $this->lang->line('news_event');?></a>
-                        <div class="background news"></div>
+                        <div class="background">
+                            <div class="icon video"></div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-lg-6 tab-label-header">
                     <div class="tab-label tab-label-right active">
                         <a href="#"><?php echo $this->lang->line('photo_video');?></a>
-                        <div class="background video"></div>
+                        <div class="background">
+                            <div class="icon video"></div>
+                        </div>
                     </div>
                 </div>
             </div>
 
 
 
-            <div class="row tab-panel tab-panel-1">
+            <div class="tab-panel tab-panel-1">
                 <div class="row contact-label">
                     <?php echo $posts['post_title']?>
                 </div>
 
 
 
-                <div class="row panel-content">
+                <div class="col-lg-12 panel-content">
 
                     <div class="date"><?php echo $this->lang->line('date');?>: <?php echo date('d/m/y', $timestamp);?></div>
+                    <div class="clearfix"></div>
                     <div class="content">
-                        <img src="<?php echo $posts['post_featured_image']?>" alt="" />
                         <?php echo $posts['post_content']?>
                     </div>
                     <div class="row detail-label-title">
-                        <div class="col-lg-5 left">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-2 left">
                             <div class="d-l-se"></div>
                         </div>
-                        <div class="col-lg-2"><span><?php echo $this->lang->line('related_news');?></span></div>
-                        <div class="col-lg-5 right">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-8"><span><?php echo $this->lang->line('related_news');?></span></div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-2 right">
                             <div class="d-l-se"></div>
                         </div>
                     </div>
@@ -81,7 +85,7 @@
                         <?php
                         for ($i = 0; $i <=2; $i++) {
                         ?>
-                        <div class="col-lg-4 b-item">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 b-item">
                             <div class='b-img'><img class='img-responsive' src="<?php echo $new_posts[$i]['post_featured_image']?>" alt="" />
                                 <div class="b-date">
                                     <span><?php echo date('d', $timestamp)?></span>
@@ -89,7 +93,7 @@
                                 </div>
                             </div>
                             <p class='title'><?php echo $new_posts[$i]['post_title']?></p>
-                            <p class='description'><?php echo $new_posts[$i]['post_description']?></p>
+                            <div class='description'><?php echo $new_posts[$i]['post_description']?></div>
                             <a class='d' href="<?php short_url('news-item', array($new_posts[$i]['alias_name']) )?>"><?php echo $this->lang->line('detail');?></a>
                         </div>
                         <?php }?>

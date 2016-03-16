@@ -32,20 +32,24 @@
 
     <div class="container">
 
-        <div class="row">
+        <div class="news">
 
             <div class="row tab">
                 <div class="col-lg-6 tab-label-header">
                     <div class="tab-label tab-label-left active">
                         <a href="#"><?php echo $this->lang->line('news_event');?></a>
-                        <div class="background news"></div>
+                        <div class="background">
+                            <div class="icon video"></div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-lg-6 tab-label-header">
                     <div class="tab-label tab-label-right active">
                         <a href="#"><?php echo $this->lang->line('photo_video');?></a>
-                        <div class="background video"></div>
+                        <div class="background">
+                            <div class="icon video"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -57,11 +61,11 @@
                     <?php echo $this->lang->line('news_event');?>
                 </div>
 
-                <div class="row panel-content">
+                <div class="col-lg-12 panel-content">
                     <!--item-->
                     <?php
                     foreach($news as $n) {?>
-                    <div class="col-lg-4 b-item">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 b-item">
 
                         <div class='b-img'><img class='img-responsive' src="<?php echo $n['post_featured_image']?>" alt="" />
                             <div class="b-date">
@@ -70,7 +74,7 @@
                             </div>
                         </div>
                         <p class='title'><?php echo $n['post_title']?></p>
-                        <p class='description'><?php echo $n['post_description']?></p>
+                        <div class='description'><?php echo $n['post_description']?></div>
                         <a class='d' href="<?php short_url('news-item', array($n['alias_name']) )?>"><?php echo $this->lang->line('detail');?></a>
 
                     </div>
@@ -78,6 +82,7 @@
                     <!--item-->
                 </div>
 
+                <div class="clearfix"></div>
                 <div class="row">
                     <!--pagination-->
                     <div class="col-lg-12 pagination-area-center">

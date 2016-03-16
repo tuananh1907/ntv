@@ -55,3 +55,11 @@ $lang['shape'] = 'THEO HÌNH DẠNG';
 $lang['labels'] = 'THEO NHÃN HIỆU';
 
 $lang['category_project'] = 'DANH MỤC CÔNG TRÌNH';
+
+
+//bottom menu
+$lang['txt_about'] = 'Giới thiệu';
+$lang['txt_iron_steel'] = 'Sắt thép';
+$lang['txt_ceramics'] = 'Gốm sứ';
+$lang['txt_faq'] = 'Hỗ trợ';
+$lang['txt_contact'] = 'Liên hệ';

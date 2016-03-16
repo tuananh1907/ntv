@@ -7,9 +7,9 @@
             <div class="col-lg-8 col-md-7 col-sm-6 col-xs-12 email -top">
                 <div class="col-lg-4 col-md-4 e-label visible-lg"><p><?php echo $this->lang->line('email_letter');?></p></div>
                 <div class="col-lg-8 col-md-12  form">
-                    <form action="#">
-                        <input type="text" placeholder='Email' />
-                        <button><?php echo $this->lang->line('send_mail');?></button>
+                    <form action="" method="post">
+                        <input name="email" type="text" placeholder='Email' />
+                        <button type="submit" value="send"><?php echo $this->lang->line('send_mail');?></button>
                     </form>
                 </div>
             </div>
@@ -59,11 +59,11 @@
             <div class="f-b-l pull-left">2016 Copyright by Nhat Truong Vinh</div>
             <div class="f-b-r pull-right  hidden-xs">
                 <ul class="f-b-r-m">
-                    <li><a href="#">Sắt thép</a></li>
-                    <li><a href="#">Gôm sứ</a></li>
-                    <li><a href="#">Giới thiệu</a></li>
-                    <li><a href="#">Hỗ trợ</a></li>
-                    <li><a href="#">Liên hệ</a></li>
+                    <li><a href="<?php short_url('product', array())?>"><?php  echo $this->lang->line('txt_iron_steel'); ?></a></li>
+                    <li><a href="<?php short_url('product2', array())?>"><?php  echo $this->lang->line('txt_ceramics'); ?></a></li>
+                    <li><a href="<?php short_url('about', array())?>"><?php  echo $this->lang->line('txt_about'); ?></a></li>
+                    <li><a href="<?php short_url('faq', array())?>"><?php  echo $this->lang->line('txt_faq'); ?></a></li>
+                    <li><a href="<?php short_url('contact', array())?>"><?php  echo $this->lang->line('txt_contact'); ?></a></li>
                 </ul>
             </div>
             <div class="top"></div>

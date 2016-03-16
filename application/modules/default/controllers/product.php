@@ -29,7 +29,7 @@ class Product extends Parent_Controller
 
 
         $this->load->model('post_default_model');
-        $limit = 1;
+        $limit = 12;
         $count = $this->post_default_model->count($post_module, $language_id);
         $p = isset($_GET['p']) ? $_GET['p'] : 1;
         $offset = ($p - 1) * $limit;
@@ -74,7 +74,7 @@ class Product extends Parent_Controller
         }
 
         $this->load->model('post_default_model');
-        $limit = 1;
+        $limit = 12;
         $count = $this->post_default_model->count($post_module, $language_id, $category_id);
         $p = isset($_GET['p']) ? $_GET['p'] : 1;
         $offset = ($p - 1) * $limit;
@@ -126,9 +126,10 @@ class Product extends Parent_Controller
         $this->data['seo_description'] = $this->data['post']['post_seo_description'];
         $this->data['seo_keywords'] = $this->data['post']['post_seo_keywords'];
 
-        $meta = $this->post_default_model->get_meta($id, $post_module, array('_gallery'));
-       $gallery = stripcslashes($meta['_gallery']);
+        $meta = $this->post_default_model->get_meta($id, $post_module, array('_gallery', '_document'));
+        $gallery = stripcslashes($meta['_gallery']);
         $this->data['gallery'] = json_decode($gallery, true);
+        $this->data['document'] = $meta['_document'];
 
 
 

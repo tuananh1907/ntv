@@ -12,18 +12,17 @@
 <div class="content">
     <div class="container">
         <div class="ntv-pagination">
-            <div class="col-lg-3"><p><?php echo $page['post_title']?></p></div>
-            <div class="col-lg-5 p-l-c">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"><p><?php echo $page['post_title']?></p></div>
+            <div class="col-lg-5 col-md-5 visible-md visible-lg p-l-c">
                 <div class="l">
-                    <div class="col-lg-1 line star"></div>
-                    <div class="col-lg-10 line l-c"></div>
-                    <div class="col-lg-1 line node"></div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 line star"></div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 line l-c"></div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 line node"></div>
                 </div>
             </div>
-            <div class="col-lg-4 bc">
+            <div class="col-lg-4 col-md-4 col-sm-6 hidden-xs bc">
                 <ul>
                     <li><a href="#"><?php echo $this->lang->line('homepage');?> - </a></li>
-<!--                    <li><a href="#">--><?php //echo $page['post_title']?><!-- - </a></li>-->
                     <li class='last'><span><?php echo $page['post_title']?></span></li>
                 </ul>
             </div>
@@ -36,8 +35,8 @@
             <div class="row contact-label">
                 <?php echo $this->lang->line('contact');?>
             </div>
-            <div class="row contact-info">
-                <div class="col-lg-4 contact-info-address">
+            <div class="col-lg-12 contact-info">
+                <div class="col-lg-4 col-md-4 col-sm-4 contact-info-address">
                     <div class="contact-info-label">
                         <p><?php echo $this->lang->line('address');?></p>
                     </div>
@@ -53,7 +52,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-lg-4 contact-info-phone">
+                <div class="col-lg-4 col-md-4 col-sm-4 contact-info-phone">
                     <div class="contact-info-label">
                         <p><?php echo $this->lang->line('phone');?></p>
                     </div>
@@ -64,7 +63,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-lg-4 contact-info-mail">
+                <div class="col-lg-4 col-md-4 col-sm-4 contact-info-mail">
                     <div class="contact-info-label">
                         <p>Mail</p>
                     </div>
@@ -74,7 +73,7 @@
                 </div>
             </div>
 
-            <div class="row contact-form">
+            <div class="col-lg-12 contact-form">
                 <div class="col-lg-6">
                     <div class="contact-form-label">
                         <?php echo $this->lang->line('form_contact');?>
@@ -98,7 +97,9 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-lg-6"></div>
+                <div class="col-lg-6">
+                    <img src="<?php echo DEFAULT_IMAGE_PATH; ?>/map.jpg" class="img-responsive" alt=""/>
+                </div>
             </div>
         </div>
 

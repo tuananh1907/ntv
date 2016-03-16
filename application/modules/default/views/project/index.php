@@ -50,9 +50,10 @@
 
         <div class="col-lg-9 content-right">
             <div class="content-right-top">
-                <div class='pull-left'><?php echo $this->lang->line('page');?> <?php echo $current_page?> <?php echo $this->lang->line('of');?> <?php echo $pages?> <strong>(<?php echo $count?> <?php echo $this->lang->line('product');?>)</strong></div>
+                <div class='hidden-xs pull-left'><?php echo $this->lang->line('page');?> <?php echo $current_page?> <?php echo $this->lang->line('of');?> <?php echo $pages?> <strong>(<?php echo $count?> <?php echo $this->lang->line('product');?>)</strong></div>
+                <div class="visible-xs pull-left"><?php echo $current_page?>/<?php echo $pages?></div>
                 <div class="pull-right show-product">
-                    <div class="show"><?php echo $this->lang->line('show');?></div>
+                    <div class="hidden-xs show"><?php echo $this->lang->line('show');?></div>
 
                     <div class="squard">
                         <label class='range-choosen'>12</label>
@@ -62,14 +63,14 @@
                             <li>13</li>
                         </ul>
                     </div>
-                    <div><?php echo $this->lang->line('product');?> / <?php echo $this->lang->line('page');?></div>
+                    <div class="hidden-xs"><?php echo $this->lang->line('product');?> / <?php echo $this->lang->line('page');?></div>
                 </div>
             </div>
 
             <div class="content-right-center">
                 <!--item-->
                 <?php foreach ($posts as $ps) { ?>
-                    <div class="col-lg-6 p-item">
+                    <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 p-item">
                         <div class="p-item-img">
                             <?php
                             if (!empty($ps['post_featured_image'])) {

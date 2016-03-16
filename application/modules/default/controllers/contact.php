@@ -37,8 +37,8 @@ class Contact extends Parent_Controller {
 
         }
 
-		$page = $this->post_default_model->get_page('contact', LANGUAGE);
-		$this->data['page'] = $page;
+		/*$page = $this->post_default_model->get_page('contact', LANGUAGE);
+		$this->data['page'] = $page;*/
 
 //        _pr($this->data['page'],true);
 
@@ -85,9 +85,6 @@ class Contact extends Parent_Controller {
 	    	$this->session->set_flashdata( 'notice', $this->lang->line('send_mail_failure') );
 	    	$this->back_to_page();
 	    }
-
-
-
 	}
 
 

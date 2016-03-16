@@ -74,7 +74,7 @@
                 foreach($lib_photo as $lp) {
                 ?>
                 <!--item-->
-                <div class="col-lg-4 p-item">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p-item">
                     <div class='p-item-img'><img class='img-responsive' src="<?php echo $lp['post_featured_image']?>" alt="" />
                         <a href="<?php short_url('library-item', array($lp['alias_name']))?>"><div class="border"></div></a>
                         <div class="bg"></div>

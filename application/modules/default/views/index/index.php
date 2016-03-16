@@ -23,14 +23,18 @@
     <div class="container">
         <div class="category-intro">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ci c-left">
-                <img src="<?php echo DEFAULT_IMAGE_PATH; ?>/st.jpg" class='img-responsive' alt="" />
+                <a href="<?php short_url('product', array())?>">
+                    <img src="<?php echo DEFAULT_IMAGE_PATH; ?>/st.jpg" class='img-responsive' alt="" />
+                </a>
                 <a href="<?php short_url('product', array())?>">
                     <div class="c-hover hidden-sm hidden-xs"></div>
                 </a>
                 <div class='ci-title'><?php echo $this->lang->line('iron_steel');?></div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ci c-right">
-                <img src="<?php echo DEFAULT_IMAGE_PATH; ?>/gs.jpg" class='img-responsive' alt="" />
+                <a href="<?php short_url('product2', array())?>">
+                    <img src="<?php echo DEFAULT_IMAGE_PATH; ?>/gs.jpg" class='img-responsive' alt="" />
+                </a>
                 <a href="<?php short_url('product2', array())?>">
                     <div class="c-hover hidden-sm hidden-xs"></div>
                 </a>

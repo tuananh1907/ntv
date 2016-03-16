@@ -64,17 +64,17 @@
 
 
 
-        <div class="row tab-panel tab-panel-1">
+        <div class="tab-panel tab-panel-1">
             <div class="row contact-label">
                 <?php echo $this->lang->line('catalogue_product');?>
             </div>
 
             <div class="col-lg-12 panel-content">
-                <div class="col-lg-6 catalogue st">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 catalogue st">
                     <p>Catalogue</p>
                     <div><?php echo $this->lang->line('iron_steel');?></div>
                 </div>
-                <div class="col-lg-6 catalogue gs">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 catalogue gs">
                     <p>Catalogue</p>
                     <div><?php echo $this->lang->line('ceramics');?></div>
                 </div>

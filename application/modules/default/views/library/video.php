@@ -73,7 +73,7 @@
                 foreach ($lib_video as $lv) {
                 ?>
                 <!--item-->
-                <div class="col-lg-4 p-item">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p-item">
                     <div class='p-item-img'>
                         <img class='img-responsive' src="<?php echo $lv['img']?>" alt="" />
                         <a class="youtube" href="<?php echo $lv['a']?>"><div class="border"></div></a>

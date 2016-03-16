@@ -33,7 +33,7 @@
     <div class="container">
         <div class="col-lg-3 content-left">
             <div class="block-left">
-                <div class='heading list'><p><?php echo $this->lang->line('category_about_us');?></p> <span class='se'></span></div>
+                <div class='heading list'><p><?php echo $this->lang->line('category_project');?></p> <span class='se'></span></div>
                 <ul class='menu-list'>
                     <?php
                     foreach($categories as $cs) {
@@ -60,11 +60,11 @@
             </div>
 
             <div class="row detail-label-title">
-                <div class="col-lg-4 left">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-2 left">
                     <div class="d-l-se"></div>
                 </div>
-                <div class="col-lg-4"><span><?php echo isset($category['category_title']) ? $category['category_title'] : ''?></span></div>
-                <div class="col-lg-4 right">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-8"><span><?php echo isset($category['category_title']) ? $category['category_title'] : ''?></span></div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-2 right">
                     <div class="d-l-se"></div>
                 </div>
             </div>

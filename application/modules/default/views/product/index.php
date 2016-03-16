@@ -88,9 +88,10 @@ $r = ceil( count($shape) /2 );
         <div class="col-lg-9 content-right">
 
             <div class="content-right-top">
-                <div class='pull-left'><?php echo $this->lang->line('page');?> <?php echo $current_page?> <?php echo $this->lang->line('of');?> <?php echo $pages?> <strong>(<?php echo $count?> <?php echo $this->lang->line('product');?>)</strong></div>
+                <div class='hidden-xs pull-left'><?php echo $this->lang->line('page');?> <?php echo $current_page?> <?php echo $this->lang->line('of');?> <?php echo $pages?> <strong>(<?php echo $count?> <?php echo $this->lang->line('product');?>)</strong></div>
+                <div class="visible-xs pull-left"><?php echo $current_page?>/<?php echo $pages?></div>
                 <div class="pull-right show-product">
-                    <div class="show"><?php echo $this->lang->line('show');?></div>
+                    <div class="hidden-xs show"><?php echo $this->lang->line('show');?></div>
 
                     <div class="squard">
                         <label class='range-choosen'>12</label>
@@ -101,7 +102,7 @@ $r = ceil( count($shape) /2 );
                             <li>13</li>
                         </ul>
                     </div>
-                    <div><?php echo $this->lang->line('product');?> / <?php echo $this->lang->line('page');?></div>
+                    <div class="hidden-xs"><?php echo $this->lang->line('product');?> / <?php echo $this->lang->line('page');?></div>
                 </div>
             </div>
             <div class="clearfix"></div>
@@ -110,7 +111,7 @@ $r = ceil( count($shape) /2 );
 
                 <?php
                 foreach ($posts as $ps) { ?>
-                    <div class="col-lg-4 p">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p">
                         <div class='p-item-img'>
                             <img src="<?php echo $ps['post_featured_image'] ?>" class='img-responsive' alt=""/>
                             <a href="<?php short_url('product-item', array($ps['alias_name'])) ?>">

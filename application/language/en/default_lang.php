@@ -1,5 +1,5 @@
 <?php
-$lang['error_required'] = 'You cannot leave this empty !';
+/*$lang['error_required'] = 'You cannot leave this empty !';
 $lang['error_email'] = 'Email is invalid !';
 
 $lang['txt_more'] = 'More';
@@ -37,7 +37,7 @@ $lang['date_format'] = 'd-m-Y';
 $lang['send_mail_success'] = 'Email have sent successfully';
 $lang['send_mail_failure'] = 'Email have send failure . Please try again!!';
 
-$lang['txt_no_data'] = 'Posts will be update soon !';
+$lang['txt_no_data'] = 'Posts will be update soon !';*/
 
 
 //NTV
@@ -95,6 +95,13 @@ $lang['shape'] = 'SHAPE';
 $lang['labels'] = 'LABELS';
 
 $lang['category_project'] = 'CATEGORY PROJECT';
+
+//bottom menu
+$lang['txt_about'] = 'About';
+$lang['txt_iron_steel'] = 'Iron & Steel';
+$lang['txt_ceramics'] = 'Ceramics';
+$lang['txt_faq'] = 'Faq';
+$lang['txt_contact'] = 'Contact';
 
 
 
