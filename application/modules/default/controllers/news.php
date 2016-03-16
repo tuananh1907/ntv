@@ -21,7 +21,7 @@ class News extends Parent_Controller {
 
         $post_module = 'news';
         $language_id = LANGUAGE;
-        $limit = 2;
+        $limit = 9;
         $count = $this->post_default_model->count($post_module,$language_id);
         $pages = ceil($count/$limit);
         $p = isset($_GET['p']) ? $_GET['p'] : 1;

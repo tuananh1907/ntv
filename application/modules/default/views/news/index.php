@@ -22,7 +22,7 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6 hidden-xs bc">
                 <ul>
-                    <li><a href="#">Trang chủ - </a></li>
+                    <li><a href="#"><?php echo $this->lang->line('homepage');?> - </a></li>
 <!--                    <li><a href="#">--><?php //echo $page['post_title']?><!-- - </a></li>-->
                     <li class='last'><span><?php echo $page['post_title']?></span></li>
                 </ul>
@@ -37,14 +37,14 @@
             <div class="row tab">
                 <div class="col-lg-6 tab-label-header">
                     <div class="tab-label tab-label-left active">
-                        <a href="#">Tin tức truyền thông</a>
+                        <a href="#"><?php echo $this->lang->line('news_event');?></a>
                         <div class="background news"></div>
                     </div>
                 </div>
 
                 <div class="col-lg-6 tab-label-header">
                     <div class="tab-label tab-label-right active">
-                        <a href="#">Hình ảnh/ video</a>
+                        <a href="#"><?php echo $this->lang->line('photo_video');?></a>
                         <div class="background video"></div>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
 
             <div class="row tab-panel tab-panel-1">
                 <div class="row contact-label">
-                    Tin tức truyền thông
+                    <?php echo $this->lang->line('news_event');?>
                 </div>
 
                 <div class="row panel-content">
@@ -71,7 +71,7 @@
                         </div>
                         <p class='title'><?php echo $n['post_title']?></p>
                         <p class='description'><?php echo $n['post_description']?></p>
-                        <a class='d' href="<?php short_url('news-item', array($n['alias_name']) )?>">Chi tiết</a>
+                        <a class='d' href="<?php short_url('news-item', array($n['alias_name']) )?>"><?php echo $this->lang->line('detail');?></a>
 
                     </div>
                     <?php }?>

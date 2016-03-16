@@ -17,6 +17,8 @@ $route_params = array(
       'pdf' => '/%s/tai-lieu.html',
 
       'partner' => '/%s/doi-tac.html',
+
+      'faq' => '/%s/hoi-dap.html',
       
       'product' => '/%s/sat-thep.html',
       'product-item' => '/%s/sat-thep/%s.html',
@@ -40,7 +42,9 @@ $route_params = array(
 
 
       'contact' => '/%s/contact.html',
-      'career' => '/%s/career.html',
+      /*'career' => '/%s/career.html',*/
+
+      'faq' => '/%s/faq.html',
 
       'library' => '/%s/library.html',
       'library-item' => '/%s/library/%s.html',

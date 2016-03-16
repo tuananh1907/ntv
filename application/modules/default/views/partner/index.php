@@ -22,7 +22,7 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6 hidden-xs bc">
                 <ul>
-                    <li><a href="#">Trang chủ - </a></li>
+                    <li><a href="#"><?php echo $this->lang->line('homepage');?> - </a></li>
 <!--                    <li><a href="#">--><?php //echo $page['post_title']?><!-- - </a></li>-->
                     <li class='last'><span><?php echo $page['post_title']?></span></li>
                 </ul>
@@ -34,7 +34,7 @@
 
         <div class="row tab-panel tab-panel-1">
             <div class="row contact-label">
-                Đối tác
+                <?php echo $this->lang->line('clients');?>
             </div>
 
 

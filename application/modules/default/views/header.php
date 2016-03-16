@@ -30,7 +30,7 @@ $count = count($menu_list);
 <div class='header'>
     <div class="container">
         <div class="block-top language col-lg-5 col-md-5 pull-left">
-            <span class='hidden-xs'>Ngôn ngữ :</span>
+            <span class='hidden-xs'><?php echo $this->lang->line('language');?> :</span>
             <a href="?l=en" id="eng"><img src="<?php echo DEFAULT_IMAGE_PATH; ?>/eng.png"/></a>
             <a href="?l=vn" id="viet"><img src="<?php echo DEFAULT_IMAGE_PATH; ?>/viet.png"/></a>
         </div>
@@ -47,7 +47,7 @@ $count = count($menu_list);
                 <!--menu left-->
 
                 <ul>
-                    <?php for ($i = 0; $i <= 3; $i++) { ?>
+                    <?php for ($i = 0; $i <= 4; $i++) { ?>
                         <?php if ($menu_list[$i]['post_module'] == 'index') { ?>
                             <li class="first"><a href="<?php short_url('index') ?>"><i class="fa fa-home fa-lg"></i></a>
                             </li>
@@ -71,7 +71,7 @@ $count = count($menu_list);
                 <!--menu right-->
                 <ul>
                     <?php
-                    for ($i = 4; $i < $count; $i++) {
+                    for ($i = 5; $i < $count; $i++) {
                         ?>
                         <li>
                             <a href="<?php short_url($menu_list[$i]['post_module']) ?>"><?php echo $menu_list[$i]['post_title'] ?></a>
@@ -80,6 +80,22 @@ $count = count($menu_list);
                 </ul>
             </div>
         </div>
+
+        <!--mobile-menu-->
+        <div class='toggle-menu-btn visible-sm visible-xs'><i class='fa fa-bars fa-2x'></i></div>
+        <div class='toggle-menu'>
+            <div class='toggle-menu-close visible-sm visible-xs'><i class='fa fa-times fa-2x'></i></div>
+            <ul>
+                <?php
+                for ($i = 0; $i < $count; $i++) {
+                    ?>
+                    <li>
+                        <a href="<?php short_url($menu_list[$i]['post_module']) ?>"><?php echo $menu_list[$i]['post_title'] ?></a>
+                    </li>
+                <?php } ?>
+            </ul>
+        </div>
+        <!--//mobile-menu-->
     </div>
 </div>
 <!--//header-->

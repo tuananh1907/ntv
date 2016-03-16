@@ -22,7 +22,7 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6 hidden-xs bc">
                 <ul>
-                    <li><a href="#">Trang chủ - </a></li>
+                    <li><a href="#"><?php echo $this->lang->line('homepage');?> - </a></li>
 <!--                    <li><a href="#">--><?php //echo $page['post_title']?><!-- - </a></li>-->
                     <li class='last'><span><?php echo $page['post_title']?></span></li>
                 </ul>
@@ -35,7 +35,7 @@
 
             <div class="col-lg-4 tab-label-header">
                 <div class="tab-label tab-label-left active">
-                    <a href="#">Thư viện hình ảnh</a>
+                    <a href="#"><?php echo $this->lang->line('photo_lib');?></a>
                     <div class="background">
                         <div class="icon photo"></div>
                     </div>
@@ -44,7 +44,7 @@
 
             <div class="col-lg-4 tab-label-header">
                 <div class="tab-label tab-label-center">
-                    <a href="<?php short_url('video')?>">Thư viện Video</a>
+                    <a href="<?php short_url('video')?>"><?php echo $this->lang->line('video_lib');?></a>
                     <div class="background">
                         <div class="icon video"></div>
                     </div>
@@ -53,7 +53,7 @@
 
             <div class="col-lg-4 tab-label-header">
                 <div class="tab-label tab-label-right">
-                    <a href="<?php short_url('pdf')?>">Catalogue sản phẩm</a>
+                    <a href="<?php short_url('pdf')?>"><?php echo $this->lang->line('catalogue_product');?></a>
                     <div class="background">
                         <div class="icon pdf"></div>
                     </div>
@@ -66,7 +66,7 @@
 
         <div class="row tab-panel tab-panel-1">
             <div class="row contact-label">
-                Thư viện hình ảnh
+                <?php echo $this->lang->line('photo_lib');?>
             </div>
 
             <div class="col-lg-12 panel-content project">

@@ -22,9 +22,9 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6 hidden-xs bc">
                 <ul>
-                    <li><a href="#">Trang chủ - </a></li>
+                    <li><a href="#"><?php echo $this->lang->line('homepage');?> - </a></li>
                     <li><a href="#"><?php echo $page['post_title']?> - </a></li>
-                    <li class='last'><span>Sắt thép</span></li>
+                    <li class='last'><span><?php echo $this->lang->line('iron_steel');?></span></li>
                 </ul>
             </div>
         </div>
@@ -37,14 +37,14 @@
             <div class="row tab">
                 <div class="col-lg-6 tab-label-header">
                     <div class="tab-label tab-label-left active">
-                        <a href="#">Tin t?c truy?n thông</a>
+                        <a href="#"><?php echo $this->lang->line('news_event');?></a>
                         <div class="background news"></div>
                     </div>
                 </div>
 
                 <div class="col-lg-6 tab-label-header">
                     <div class="tab-label tab-label-right active">
-                        <a href="#">Hình ?nh/ video</a>
+                        <a href="#"><?php echo $this->lang->line('photo_video');?></a>
                         <div class="background video"></div>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
 
                 <div class="row panel-content">
 
-                    <div class="date">Ngày ??ng: <?php echo date('d/m/y', $timestamp);?></div>
+                    <div class="date"><?php echo $this->lang->line('date');?>: <?php echo date('d/m/y', $timestamp);?></div>
                     <div class="content">
                         <img src="<?php echo $posts['post_featured_image']?>" alt="" />
                         <?php echo $posts['post_content']?>
@@ -70,7 +70,7 @@
                         <div class="col-lg-5 left">
                             <div class="d-l-se"></div>
                         </div>
-                        <div class="col-lg-2"><span>Tin t?c khác</span></div>
+                        <div class="col-lg-2"><span><?php echo $this->lang->line('related_news');?></span></div>
                         <div class="col-lg-5 right">
                             <div class="d-l-se"></div>
                         </div>
@@ -90,7 +90,7 @@
                             </div>
                             <p class='title'><?php echo $new_posts[$i]['post_title']?></p>
                             <p class='description'><?php echo $new_posts[$i]['post_description']?></p>
-                            <a class='d' href="<?php short_url('news-item', array($new_posts[$i]['alias_name']) )?>">Chi ti?t</a>
+                            <a class='d' href="<?php short_url('news-item', array($new_posts[$i]['alias_name']) )?>"><?php echo $this->lang->line('detail');?></a>
                         </div>
                         <?php }?>
                         <!--item-->

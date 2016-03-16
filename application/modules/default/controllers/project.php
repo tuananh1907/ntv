@@ -32,13 +32,14 @@ class Project extends Parent_Controller
 
         $post_module = 'project';
         $this->load->model('post_default_model');
-        $limit = 1;
+        $limit = 12;
         $count = $this->post_default_model->count($post_module, $language_id);
         $p = isset($_GET['p']) ? $_GET['p'] : 1;
         $offset = ($p-1)*$limit;
         $this->data['posts'] = $this->post_default_model->get_post_by_pagination($post_module,$language_id,$offset,$limit);
         $this->data['current_page'] = $p;
         $this->data['pages'] = ceil($count/$limit);
+        $this->data['count'] = $count;
 //        _pr($this->data['posts'],true);
 
 
@@ -82,13 +83,14 @@ class Project extends Parent_Controller
 
         $post_module = 'project';
         $this->load->model('post_default_model');
-        $limit = 1;
+        $limit = 12;
         $count = $this->post_default_model->count($post_module, $language_id,$category_id);
         $p = isset($_GET['p']) ? $_GET['p'] : 1;
         $offset = ($p-1)*$limit;
         $this->data['posts'] = $this->post_default_model->get_post_by_pagination($post_module,$language_id,$offset,$limit, $category_id);
         $this->data['current_page'] = $p;
         $this->data['pages'] = ceil($count/$limit);
+        $this->data['count'] = $count;
 
 
 

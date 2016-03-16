@@ -22,7 +22,7 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6 hidden-xs bc">
                 <ul>
-                    <li><a href="#">Trang chủ - </a></li>
+                    <li><a href="#"><?php echo $this->lang->line('homepage');?> - </a></li>
                     <!--<li><a href="#"><?php /*echo $page['post_title']*/?> - </a></li>-->
                     <li class='last'><span><?php echo $page['post_title']?></span></li>
                 </ul>
@@ -33,7 +33,7 @@
     <div class="container">
         <div class="col-lg-3 content-left">
             <div class="block-left">
-                <div class='heading list'><p>Danh mục giới thiệu</p> <span class='se'></span></div>
+                <div class='heading list'><p><?php echo $this->lang->line('category_about_us');?></p> <span class='se'></span></div>
                 <ul class='menu-list'>
                     <?php
                     foreach($categories as $cs) {
@@ -63,7 +63,7 @@
                 <div class="col-lg-4 left">
                     <div class="d-l-se"></div>
                 </div>
-                <div class="col-lg-4"><span><?php echo $category['category_title']?></span></div>
+                <div class="col-lg-4"><span><?php echo isset($category['category_title']) ? $category['category_title'] : ''?></span></div>
                 <div class="col-lg-4 right">
                     <div class="d-l-se"></div>
                 </div>
@@ -71,27 +71,30 @@
 
             <div class="col-lg-12">
                 <div class="jcarousel jcarousel-3">
+                    <ul>
                     <?php
                     foreach($posts_category as $psc) {
                     ?>
-                    <ul>
+
                         <li>
                             <div class="p-item-img">
-                                <?php if( !empty($pcs['post_featured_title']) ) {?>
-                                <a href="<?php short_url('project-category-item', array($psc['alias_name']))?>"><img class='img-responsive' src="<?php echo $psc['post_featured_title']?>" alt="" /></a>
+                                <?php if( !empty($psc['post_featured_image']) ) {?>
+                                <img class='img-responsive' src="<?php echo $psc['post_featured_image']?>" alt="" />
                                 <?php }?>
-                                <div class='bg'>
+                                <a href="<?php short_url('project-item', array($psc['alias_name']))?>">
+                                    <div class='bg'>
                                     <div class='bg-center'></div>
+                                </a>
                                 </div>
                             </div>
                             <p><a href="<?php short_url('project-item', array($psc['alias_name']))?>"><?php echo $psc['post_title']?></a></p>
                         </li>
 
 
-                    </ul>
+
                     <?php }?>
 
-
+                    </ul>
                 </div>
                 <div class="clearfix"></div>
                 <ul class='jcarousel-control jcarousel-control-3'>
@@ -103,3 +106,4 @@
 
     </div>
 </div>
+<script type="text/javascript" src="<?php echo DEFAULT_JS_PATH; ?>/jcarousel.responsive3.js"></script>

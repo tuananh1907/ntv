@@ -25,9 +25,9 @@ $r = ceil( count($shape) /2 );
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6 hidden-xs bc">
                 <ul>
-                    <li><a href="#">Trang chủ - </a></li>
+                    <li><a href="#"><?php echo $this->lang->line('homepage');?> - </a></li>
                     <li><a href="#"><?php echo $page['post_title']?> - </a></li>
-                    <li class='last'><span>Sắt thép</span></li>
+                    <li class='last'><span><?php echo $this->lang->line('iron_steel');?></span></li>
                 </ul>
             </div>
         </div>
@@ -36,7 +36,7 @@ $r = ceil( count($shape) /2 );
     <div class="container">
         <div class="col-lg-3 content-left">
             <div class="block-left">
-                <div class='heading list'><p>Danh m?c thép</p> <span class='se'></span></div>
+                <div class='heading list'><p><?php echo $this->lang->line('cat_pro');?></p> <span class='se'></span></div>
                 <ul class='menu-list'>
                     <?php foreach ($categories as $cs) { ?>
                         <li><a href="<?php short_url('productcat-item', array($cs['alias_name']))?>"><?php echo $cs['category_title'] ?></a></li>
@@ -46,7 +46,7 @@ $r = ceil( count($shape) /2 );
             </div>
 
             <div class="block-left">
-                <div class='heading'><p>Theo hình dạng</p> <span class='se'></span></div>
+                <div class='heading'><p><?php echo $this->lang->line('shape');?></p> <span class='se'></span></div>
                 <div class="col-lg-6 tag-area">
                     <ul class='tag'>
                         <?php
@@ -70,7 +70,7 @@ $r = ceil( count($shape) /2 );
             <div class="clearfix"></div>
 
             <div class="block-left">
-                <div class='heading'><p>Theo nhãn hi?u</p> <span class='se'></span></div>
+                <div class='heading'><p><?php echo $this->lang->line('labels');?></p> <span class='se'></span></div>
                 <div class="col-lg-12 tag-area">
                     <ul class='tag'>
                         <?php

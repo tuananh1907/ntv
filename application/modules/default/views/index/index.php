@@ -1,7 +1,10 @@
 <div class="slide">
-    <img class='img-responsive' src="<?php echo DEFAULT_IMAGE_PATH; ?>/slide.jpg">
+    <?php
+    if (!empty($page['post_featured_image'])) {
+        ?>
+        <img class='img-responsive' src="<?php echo $page['post_featured_image'];?>">
+    <?php } ?>
 </div>
-
 <div class="clearfix"></div>
 
 <div class="content">
@@ -24,14 +27,14 @@
                 <a href="<?php short_url('product', array())?>">
                     <div class="c-hover hidden-sm hidden-xs"></div>
                 </a>
-                <div class='ci-title'>Sắt thép</div>
+                <div class='ci-title'><?php echo $this->lang->line('iron_steel');?></div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ci c-right">
                 <img src="<?php echo DEFAULT_IMAGE_PATH; ?>/gs.jpg" class='img-responsive' alt="" />
                 <a href="<?php short_url('product2', array())?>">
                     <div class="c-hover hidden-sm hidden-xs"></div>
                 </a>
-                <div class='ci-title'>Gốm sứ</div>
+                <div class='ci-title'><?php echo $this->lang->line('ceramics');?></div>
             </div>
         </div>
     </div>
@@ -39,7 +42,7 @@
 
     <div class="row product">
         <div class="container">
-            <h3>Công trình tiêu biểu</h3>
+            <h3><?php echo $this->lang->line('porfolio');?></h3>
             <div class="sp-lg">
                 <div class="sp-lg-center"></div>
             </div>
@@ -81,7 +84,7 @@
 
     <div class="row client">
         <div class="container">
-            <h3>Đối tác</h3>
+            <h3><?php echo $this->lang->line('clients');?></h3>
             <div class="sp-sm">
                 <div class="sp-sm-center"></div>
             </div>

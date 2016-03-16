@@ -35,6 +35,11 @@ class Product2 extends Parent_Controller
         $this->data['posts'] = $this->post_default_model->get_post_by_pagination($post_module, $language_id, $offset, $limit);
         $this->data['current_page'] = $p;
         $this->data['pages'] = ceil($count / $limit);
+        $this->data['count'] = $count;
+
+        //TAG
+        $this->load->model('tag_default_model');
+        $this->data['brand'] = $this->tag_default_model->get_tag('brand2', $language_id);
 
         //RUN VIEW
         $this->template->build('product2/index', $this->data);
@@ -74,6 +79,7 @@ class Product2 extends Parent_Controller
         $this->data['posts'] = $this->post_default_model->get_post_by_pagination($post_module, $language_id, $offset, $limit, $category_id);
         $this->data['current_page'] = $p;
         $this->data['pages'] = ceil($count / $limit);
+        $this->data['count'] = $count;
 
 
         //SEO
@@ -83,6 +89,9 @@ class Product2 extends Parent_Controller
 
         $this->data['category'] = $category;
 
+        //TAG
+        $this->load->model('tag_default_model');
+        $this->data['brand'] = $this->tag_default_model->get_tag('brand2', $language_id);
 
         //RUN VIEW
         $this->template->build('product2/index', $this->data);
@@ -121,12 +130,12 @@ class Product2 extends Parent_Controller
         $this->data['gallery'] = json_decode($gallery, true);
 
 
-
-
         $this->data['posts_category'] = $this->post_default_model->get_post_by_category($post_module, $lang, $this->data['post']['category_id'], array());
 
 
-
+        //TAG
+        $this->load->model('tag_default_model');
+        $this->data['brand'] = $this->tag_default_model->get_tag('brand2', $language_id);
 
         //RUN VIEW
         $this->template->build('product2/product', $this->data);

@@ -36,6 +36,7 @@ class Product extends Parent_Controller
         $this->data['posts'] = $this->post_default_model->get_post_by_pagination($post_module, $language_id, $offset, $limit);
         $this->data['current_page'] = $p;
         $this->data['pages'] = ceil($count / $limit);
+        $this->data['count'] = $count;
 
         //TAG
         $this->load->model('tag_default_model');
@@ -80,6 +81,7 @@ class Product extends Parent_Controller
         $this->data['posts'] = $this->post_default_model->get_post_by_pagination($post_module, $language_id, $offset, $limit, $category_id);
         $this->data['current_page'] = $p;
         $this->data['pages'] = ceil($count / $limit);
+        $this->data['count'] = $count;
 
 
         //SEO

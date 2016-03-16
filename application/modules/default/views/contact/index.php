@@ -22,7 +22,7 @@
             </div>
             <div class="col-lg-4 bc">
                 <ul>
-                    <li><a href="#">Trang chủ - </a></li>
+                    <li><a href="#"><?php echo $this->lang->line('homepage');?> - </a></li>
 <!--                    <li><a href="#">--><?php //echo $page['post_title']?><!-- - </a></li>-->
                     <li class='last'><span><?php echo $page['post_title']?></span></li>
                 </ul>
@@ -34,12 +34,12 @@
 
         <div class="row">
             <div class="row contact-label">
-                Liên hệ Công ty TNHH NHẬT TRƯỜNG VINH
+                <?php echo $this->lang->line('contact');?>
             </div>
             <div class="row contact-info">
                 <div class="col-lg-4 contact-info-address">
                     <div class="contact-info-label">
-                        <p>Địa chỉ</p>
+                        <p><?php echo $this->lang->line('address');?></p>
                     </div>
                     <div class="contact-info-content">
                         <p>
@@ -55,11 +55,11 @@
                 </div>
                 <div class="col-lg-4 contact-info-phone">
                     <div class="contact-info-label">
-                        <p>Điện thoại</p>
+                        <p><?php echo $this->lang->line('phone');?></p>
                     </div>
                     <div class="contact-info-content">
                         <p>
-                            Điện thoại: <strong>(+848) 3754 7000</strong><br/>
+                            <?php echo $this->lang->line('phone');?>: <strong>(+848) 3754 7000</strong><br/>
                             Fax: <strong>(+848) 3754 7903</strong><br/>
                         </p>
                     </div>
@@ -77,25 +77,24 @@
             <div class="row contact-form">
                 <div class="col-lg-6">
                     <div class="contact-form-label">
-                        Form liên hệ
+                        <?php echo $this->lang->line('form_contact');?>
                     </div>
-                    <p>Quý khách có những thắc mắc cần chúng tôi hỗ trợ qua email, xin quý khách vui lòng điền thông tin
-                        vào form để được hỗ trợ tốt nhất</p>
+                    <p><?php echo $this->lang->line('txt_note');?></p>
 
                     <div class="form-contact">
                         <form id="submitform" method="post">
-                            <input name="name" class="c-name" class='name' placeholder='Họ và tên(*)'/>
+                            <input name="name" class="c-name" class='name' placeholder='<?php echo $this->lang->line('fullname');?>(*)'/>
                             <input name="email" class='c-email' class='email' placeholder='Email(*)'/>
-                            <input name="title" class="c-title" class='title' placeholder='Tiêu đề(*)'/>
+                            <input name="title" class="c-title" class='title' placeholder='<?php echo $this->lang->line('title');?>(*)'/>
                             <textarea>
 
                             </textarea>
 
-                            <input name="code" class='c-captcha small' placeholder='Mã xác nhận(*)'/>
+                            <input name="code" class='c-captcha small' placeholder='<?php echo $this->lang->line('captcha');?>(*)'/>
 
                             <div class="cap-area"><img src="<?php echo DEFAULT_IMAGE_PATH; ?>/captcha.png"></div>
 
-                            <input name="send" type="submit" class="submit small" value='Gui form'/>
+                            <input name="send" type="submit" class="submit small" value='<?php echo $this->lang->line('send_form');?>'/>
                         </form>
                     </div>
                 </div>

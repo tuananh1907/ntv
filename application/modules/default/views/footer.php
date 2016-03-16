@@ -5,11 +5,11 @@
     <div class="container contact">
         <div class="col-lg-12">
             <div class="col-lg-8 col-md-7 col-sm-6 col-xs-12 email -top">
-                <div class="col-lg-4 col-md-4 e-label visible-lg"><p>Đăng ký nhận thông tin</p></div>
+                <div class="col-lg-4 col-md-4 e-label visible-lg"><p><?php echo $this->lang->line('email_letter');?></p></div>
                 <div class="col-lg-8 col-md-12  form">
                     <form action="#">
                         <input type="text" placeholder='Email' />
-                        <button>Gửi Email</button>
+                        <button><?php echo $this->lang->line('send_mail');?></button>
                     </form>
                 </div>
             </div>

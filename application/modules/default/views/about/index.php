@@ -25,7 +25,7 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6 hidden-xs bc">
                 <ul>
-                    <li><a href="#">Trang chủ - </a></li>
+                    <li><a href="#"><?php echo $this->lang->line('homepage');?> - </a></li>
 <!--                    <li><a href="#">--><?php //echo $page['post_title']?><!-- - </a></li>-->
                     <li class='last'><span><?php echo $page['post_title']?></span></li>
                 </ul>
@@ -36,7 +36,7 @@
     <div class="container">
         <div class="col-lg-3 content-left">
             <div class="block-left">
-                <div class='heading list'><p>Danh mục giới thiệu</p> <span class='se'></span></div>
+                <div class='heading list'><p><?php echo $this->lang->line('category_about_us');?></p> <span class='se'></span></div>
                 <ul class='menu-list'>
                     <?php
                     foreach($about_list as $ab) {
