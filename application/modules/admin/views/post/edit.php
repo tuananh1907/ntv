@@ -101,6 +101,10 @@
                                                 );
                                             ?>
                                         </div>
+
+                                        <?php
+                                        $pluggable->hook_action('admin_html_post_edit_block_right_' . $module, array($module, $l, $posts[$l]['post_id']));
+                                        ?>
                                     </div><!--//Block right-->
                                     <div class="clearfix"></div>
                                 </div><!--//form-->

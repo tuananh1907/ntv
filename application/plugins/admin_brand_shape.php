@@ -1,132 +1,176 @@
 <?php
 $pluggable = new Pluggable;
 //ADD
-$pluggable->register_action('admin_html_post_add_block_right_product', 'admin_html_post_add_block_left_product_func');
-$pluggable->register_action('admin_callback_after_post_added_product', 'admin_callback_after_post_added_product_func');
+$pluggable->register_action('admin_html_post_add_block_right_product', 'admin_html_post_add_block_right_product_bs_func');
+$pluggable->register_action('admin_callback_after_post_added_product', 'admin_callback_after_post_added_product_bs_func');
 
 //EDIT
-$pluggable->register_action('admin_html_post_edit_block_right_product', 'admin_html_post_edit_block_left_product_func');
-$pluggable->register_action('admin_callback_after_post_updated_product', 'admin_callback_after_post_updated_product_func');
+$pluggable->register_action('admin_html_post_edit_block_right_product', 'admin_html_post_edit_block_right_product_bs_func');
+$pluggable->register_action('admin_callback_after_post_updated_product', 'admin_callback_after_post_updated_product_bs_func');
 
-//ADD
-$pluggable->register_action('admin_html_post_add_block_right_product2', 'admin_html_post_add_block_left_product_func');
-$pluggable->register_action('admin_callback_after_post_added_product2', 'admin_callback_after_post_added_product_func');
 
-//EDIT
-$pluggable->register_action('admin_html_post_edit_block_right_product2', 'admin_html_post_edit_block_left_product_func');
-$pluggable->register_action('admin_callback_after_post_updated_product2', 'admin_callback_after_post_updated_product_func');
-
-function admin_html_post_add_block_left_product_func($module, $language) {
+function admin_html_post_add_block_right_product_bs_func($module, $language) {
     $CI =& get_instance();
     $CI->lang->load('plugins', ADMIN_LANGUAGE);
+    $CI->load->model('tag_admin_model');
+
+    $brand = $CI->tag_admin_model->get_tag('brand', $language);
+    $shape = $CI->tag_admin_model->get_tag('shape', $language);
     ?>
-    <div class="portlet ui-widget ui-widget-content ui-helper-clearfix ui-corner-all">
-        <div class="portlet-header ui-widget-header">
-            <span class="ui-icon ui-icon-circle-arrow-s"></span>Gallery
-        </div>
-        <div class="portlet-content">
-            <a rel="<?php echo $language?>" class='button upload-gallery'>Thêm ảnh</a>
-            <div class="clearfix"></div>
-            <ul lang="<?php echo $language?>" class='gallery_list gallery_plugin_list' id='gallery_<?php echo $language?>_list'>
-            </ul>
-            <input type="hidden" id="gallery_<?php echo $language?>" name="gallery_<?php echo $language?>">
-        </div>
+    <div class='form-field'>
+        <label class="desc">Hình dạng</label>
+        <select name='shape_<?php echo $language; ?>'>
+            <option value='0'>Chọn Hình dạng</option>
+            <?php 
+            foreach($shape as $s){
+            ?>
+            <option value='<?php echo $s['tag_id']?>'><?php echo $s['title']?></option>
+            <?php }?>
+        </select>
+    </div>
+
+    <div class='form-field'>
+        <label class="desc">Nhãn hiệu</label>
+        <select name='brand_<?php echo $language; ?>'>
+            <option value='0'>Chọn nhãn hiệu</option>
+            <?php 
+            foreach($brand as $b){
+            ?>
+            <option value='<?php echo $b['tag_id']?>'><?php echo $b['title']?></option>
+            <?php }?>
+        </select>
     </div>
 <?php
 }
 
-function admin_callback_after_post_added_product_func($module, $lang, $post_id, $langmap_id) {
+function admin_callback_after_post_added_product_bs_func($module, $lang, $post_id, $langmap_id) {
     $CI =& get_instance();
-    $CI->load->Model('meta_admin_model');
+    $CI->load->Model('tagmap_admin_model');
 
-    $gallery = $CI->input->post("gallery_" .$lang);
+    $brand_id = $CI->input->post("brand_" .$lang);
+    $shape_id = $CI->input->post("shape_" .$lang);
 
     $data = array(
         array(
-            'meta_module' => $module ,
+            'tag_id' => $brand_id ,
             'fid' => $post_id ,
-            'meta_key' => '_gallery',
-            'meta_value' => addslashes($gallery),
+            'tag_module' => 'brand',
+            'fid_module' => $module,
+            'langmap_id' => $langmap_id
+        ),
+        array(
+            'tag_id' => $shape_id ,
+            'fid' => $post_id ,
+            'tag_module' => 'shape',
+            'fid_module' => $module,
             'langmap_id' => $langmap_id
         )
     );
 
-    $CI->meta_admin_model->insert_batch($data);
+    $CI->tagmap_admin_model->insert_batch($data);
 }
 
-if (!function_exists('get_meta_value_by_meta_key')) {
-    function get_meta_value_by_meta_key($data, $meta_key) {
+if (!function_exists('list_tag_id')) {
+    function list_tag_id($data) {
+        $list = array();
         for ($i=0, $len = count($data);$i<$len;$i++) {
-            if($meta_key == $data[$i]['meta_key']) {
-                return $data[$i];
-            }
+            array_push($list, $data[$i]['tag_id']);
         }
+        return $list;
     }
 }
 
-function admin_html_post_edit_block_left_product_func($module = '', $language = '', $post_id = 0) {
+function admin_html_post_edit_block_right_product_bs_func($module = '', $language = '', $post_id = 0) {
     $CI =& get_instance();
     $CI->lang->load('plugins', ADMIN_LANGUAGE);
-    $CI->load->Model('meta_admin_model');
-    $meta = $CI->meta_admin_model->get_by_fid($post_id);
-    $gallery = get_meta_value_by_meta_key($meta, '_gallery');
-    $g = json_decode(stripslashes($gallery['meta_value']), true);
+    $CI->load->model('tag_admin_model');
+    $CI->load->Model('tagmap_admin_model');
+
+    $brand = $CI->tag_admin_model->get_tag('brand', $language);
+    $shape = $CI->tag_admin_model->get_tag('shape', $language);
+
+    $b_l = $CI->tagmap_admin_model->get_tagmap_by_fid($post_id, 'brand', $module);
+    $b_l = list_tag_id($b_l);
+
+    $s_l = $CI->tagmap_admin_model->get_tagmap_by_fid($post_id, 'shape', $module);
+    $s_l = list_tag_id($s_l);
     ?>
-    <div class="portlet ui-widget ui-widget-content ui-helper-clearfix ui-corner-all">
-        <div class="portlet-header ui-widget-header">
-            <span class="ui-icon ui-icon-circle-arrow-s"></span>Gallery
-        </div>
-        <div class="portlet-content">
-            <a rel="<?php echo $language?>" class='button upload-gallery'>Thêm ảnh</a>
-            <div class="clearfix"></div>
-            <ul lang="<?php echo $language?>" class='gallery_list gallery_plugin_list' id='gallery_<?php echo $language?>_list'>
-                <?php
-                if( count($g) > 0 ) {
-                    foreach ($g as $v) {
-                        ?>
-                        <li>
-                            <div class='image'><img src="<?php echo $v['img']?>"></div>
-                            <div class='config'>
-                                <input value='<?php echo $v['w']?>' placeholder='w' class='width'/>
-                                <input value='<?php echo $v['h']?>' placeholder='h' class='height'/>
-                                <input value='<?php echo $v['a']?>' placeholder='http://' class='anchor'/>
-                            </div>
-                            <a href="#" class='remove'>X</a>
-                        </li>
-                    <?php
-                    }
-                }
-                ?>
-            </ul>
-            <input type="hidden" id="gallery_<?php echo $language?>" name="gallery_<?php echo $language?>" value="<?php echo htmlentities($gallery['meta_value']); ?>">
-        </div>
+    <div class='form-field'>
+        <label class="desc">Hình dạng</label>
+        <select name='shape_<?php echo $language; ?>'>
+            <option value='0'>Chọn Hình dạng</option>
+            <?php 
+            foreach($shape as $s){
+                $c = (in_array($s['tag_id'], $s_l)) ? 'selected' : '';
+            ?>
+            <option <?php echo $c ?> value='<?php echo $s['tag_id']?>'><?php echo $s['title']?></option>
+            <?php }?>
+        </select>
     </div>
-<?php
+
+    <div class='form-field'>
+        <label class="desc">Nhãn hiệu</label>
+        <select name='brand_<?php echo $language; ?>'>
+            <option value='0'>Chọn nhãn hiệu</option>
+            <?php 
+            foreach($brand as $b){
+                $c = (in_array($b['tag_id'], $b_l)) ? 'selected' : '';
+            ?>
+            <option <?php echo $c ?>  value='<?php echo $b['tag_id']?>'><?php echo $b['title']?></option>
+            <?php }?>
+        </select>
+    </div>
+<?php 
 }
 
-function admin_callback_after_post_updated_product_func($module, $lang, $post_id, $langmap_id) {
+function admin_callback_after_post_updated_product_bs_func($module, $lang, $post_id, $langmap_id) {
     $CI =& get_instance();
-    $CI->load->Model('meta_admin_model');
-    $gallery = $CI->input->post("gallery_" .$lang);
-    $gallery = stripcslashes(html_entity_decode($gallery));
-    $meta = $CI->meta_admin_model->get_by_fid($post_id);
-    if( empty($meta)  ) {
+
+    $brand_id = $CI->input->post("brand_" .$lang);
+    $shape_id = $CI->input->post("shape_" .$lang);
+
+    $CI->load->Model('tagmap_admin_model');
+    $b_l = $CI->tagmap_admin_model->get_tagmap_by_fid($post_id, 'brand', $module);
+    $s_l = $CI->tagmap_admin_model->get_tagmap_by_fid($post_id, 'shape', $module);
+
+    //SHAPE
+    if( empty($s_l)  ) {
         $data = array(
-            array(
-                'meta_module' => $module ,
-                'fid' => $post_id ,
-                'meta_key' => '_gallery',
-                'meta_value' => addslashes($gallery),
-                'langmap_id' => $langmap_id
-            )
-        );
-        $CI->meta_admin_model->insert_batch($data);
+                    array(
+                        'tag_id' => $shape_id ,
+                        'fid' => $post_id ,
+                        'tag_module' => 'shape',
+                        'fid_module' => $module,
+                        'langmap_id' => $langmap_id
+                    )
+            );
+        $CI->tagmap_admin_model->insert_batch($data);
     }else {
 
         $data = array(
-            'meta_value' => addslashes($gallery),
+            'tag_id' => $shape_id,
         );
-        $CI->meta_admin_model->update($data, array('fid'=>$post_id, 'meta_key'=> '_gallery'));
+        $CI->tagmap_admin_model->update($data, array('fid'=>$post_id, 'tag_module'=> 'shape', 'fid_module'=>$module));
+    }
+
+    //BRAND
+    if( empty($b_l)  ) {
+        $data = array(
+                    array(
+                        'tag_id' => $brand_id ,
+                        'fid' => $post_id ,
+                        'tag_module' => 'brand',
+                        'fid_module' => $module,
+                        'langmap_id' => $langmap_id
+                    )
+            );
+        $CI->tagmap_admin_model->insert_batch($data);
+    }else {
+
+        $data = array(
+            'tag_id' => $brand_id,
+        );
+        $CI->tagmap_admin_model->update($data, array('fid'=>$post_id, 'tag_module'=> 'brand', 'fid_module'=>$module));
     }
 
 }
